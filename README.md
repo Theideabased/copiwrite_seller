@@ -11,6 +11,23 @@ npm run dev
 
 The site uses system font stacks and does not contact Google Fonts during development or builds.
 
+## WhatsApp Views-to-Sales landing page
+
+The product page is available at `/sell-on-whatsapp`. Its final commercial details are configured with public environment variables so the same build works locally and on Vercel:
+
+```env
+NEXT_PUBLIC_WHATSAPP_PRODUCT_NAME=WhatsApp Views-to-Sales
+NEXT_PUBLIC_WHATSAPP_PRODUCT_PRICE=5000
+NEXT_PUBLIC_WHATSAPP_PRODUCT_ORIGINAL_VALUE=
+NEXT_PUBLIC_WHATSAPP_VIDEO_URL=https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL=https://your-checkout-link.example
+NEXT_PUBLIC_WHATSAPP_IMPLEMENTATION_URL=
+```
+
+The product defaults to ₦5,000. The price accepts a plain number such as `5000` and displays it as Nigerian naira, so the environment variable can override the default later. The original value and premium implementation URL are optional. If checkout is missing, purchase interest falls back to `info@copiwrite.com`. The premium service button stays hidden until its URL is configured.
+
+Because these values use `NEXT_PUBLIC_`, they are intentionally visible in the browser. Never put a Telegram token or other secret in these fields.
+
 ## Receive contact enquiries in Telegram
 
 The form submits to `app/api/contact/route.ts`. Every validated enquiry is sent directly to the configured Telegram chat using the Telegram Bot API.
