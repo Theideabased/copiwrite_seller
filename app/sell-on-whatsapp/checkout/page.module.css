@@ -1,0 +1,265 @@
+.page {
+  --checkout-paper: oklch(0.99 0.006 95);
+  --checkout-bg: oklch(0.965 0.018 145);
+  --checkout-ink: oklch(0.2 0.015 150);
+  --checkout-muted: oklch(0.43 0.02 150);
+  --checkout-line: oklch(0.85 0.018 145);
+  --checkout-green: oklch(0.46 0.14 150);
+  --checkout-green-dark: oklch(0.34 0.105 150);
+  min-height: 100vh;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: var(--checkout-bg);
+  color: var(--checkout-ink);
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand {
+  min-height: 2.75rem;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.brand span {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--checkout-green);
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page :where(a, button, input):focus-visible {
+  outline: 3px solid var(--checkout-green);
+  outline-offset: 3px;
+}
+
+.checkoutGrid {
+  width: min(100%, 64rem);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: center;
+  margin: clamp(2.5rem, 7vw, 5rem) auto 0;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--checkout-green-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.summary h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 6vw, 5.25rem);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.intro {
+  margin: 1.5rem 0;
+  color: var(--checkout-muted);
+  line-height: 1.7;
+}
+
+.summary ul {
+  display: grid;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summary li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.summary li svg {
+  flex: 0 0 auto;
+  color: var(--checkout-green-dark);
+}
+
+.total {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 0.25rem 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--checkout-line);
+}
+
+.total span {
+  color: var(--checkout-muted);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.total strong {
+  grid-row: span 2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.total small {
+  color: var(--checkout-muted);
+}
+
+.formCard {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--checkout-line);
+  border-radius: 0.6rem;
+  background: var(--checkout-paper);
+  box-shadow: 0 1.5rem 4rem oklch(0.2 0.02 150 / 0.08);
+}
+
+.secureLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--checkout-green-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.formCard h2 {
+  margin: 0.75rem 0 1.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.form,
+.field {
+  display: grid;
+}
+
+.form {
+  gap: 1rem;
+}
+
+.field {
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.field input {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--checkout-line);
+  border-radius: 0.4rem;
+  background: white;
+  color: var(--checkout-ink);
+  font: inherit;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: oklch(0.5 0.2 25);
+}
+
+.field p,
+.field small {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.field p {
+  color: oklch(0.45 0.18 25);
+  font-weight: 800;
+}
+
+.field small {
+  color: var(--checkout-muted);
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.formError {
+  padding: 0.85rem;
+  border-left: 3px solid oklch(0.5 0.2 25);
+  background: oklch(0.96 0.025 25);
+  color: oklch(0.35 0.15 25);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.form button {
+  min-height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+  padding: 0.85rem 1.2rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--checkout-green);
+  color: white;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.form button:hover:not(:disabled) {
+  background: var(--checkout-green-dark);
+}
+
+.form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.spinner {
+  animation: spin 800ms linear infinite;
+}
+
+.paymentNote {
+  margin: -0.25rem 0 0;
+  color: var(--checkout-muted);
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .checkoutGrid {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+}

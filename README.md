@@ -24,7 +24,13 @@ NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL=https://your-checkout-link.example
 NEXT_PUBLIC_WHATSAPP_IMPLEMENTATION_URL=
 ```
 
-The product defaults to ₦5,000. The price accepts a plain number such as `5000` and displays it as Nigerian naira, so the environment variable can override the default later. The original value and premium implementation URL are optional. If checkout is missing, purchase interest falls back to `info@copiwrite.com`. The premium service button stays hidden until its URL is configured.
+The product defaults to ₦5,000. The price accepts a plain number such as `5000` and displays it as Nigerian naira, so the environment variable can override the default later. The original value and premium implementation URL are optional. When `NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL` is blank, purchase buttons use the built-in Paystack checkout at `/sell-on-whatsapp/checkout`. The premium service button stays hidden until its URL is configured.
+
+Add `PAYSTACK_PUBLIC_KEY`, `PAYSTACK_SECRET_KEY`, `PAYSTACK_CALLBACK_URL`, `RESEND_API_KEY`, `CONTACT_FROM`, and optionally `DELIVERY_ACCESS_SECRET` to `.env.local` and to the Vercel project environment variables. Use `https://your-domain.com/payment/verify` as the callback URL. The server fixes the product price at ₦5,000 (500,000 kobo), initializes payment with the secret key, and verifies status, amount and currency after Paystack redirects the buyer back.
+
+After verification, each buyer is redirected to a signed private access page where the included `whatsapp-views-to-sales-video-slides.pdf` file can be downloaded. The verified callback also emails the access link through Resend and sends the purchase to Telegram. Set `DELIVERY_ACCESS_SECRET` to a long random value in production; when omitted, the Paystack secret is used to sign access links.
+
+This product uses the live callback only. After Paystack redirects the buyer to `/payment/verify`, the server verifies the transaction, emails the private guide link and sends Telegram the buyer's name, email, WhatsApp number, Paystack reference, a direct WhatsApp contact button and the buyer's access page. No webhook route is used by this product, leaving the Paystack account webhook available for the other application.
 
 Because these values use `NEXT_PUBLIC_`, they are intentionally visible in the browser. Never put a Telegram token or other secret in these fields.
 

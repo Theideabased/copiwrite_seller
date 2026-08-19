@@ -33,7 +33,7 @@ export const offerConfig = {
   videoUrl: clean(process.env.NEXT_PUBLIC_WHATSAPP_VIDEO_URL),
   checkoutUrl:
     clean(process.env.NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL) ||
-    "mailto:info@copiwrite.com?subject=WhatsApp%20Views-to-Sales",
+    "/sell-on-whatsapp/checkout",
   implementationUrl: clean(
     process.env.NEXT_PUBLIC_WHATSAPP_IMPLEMENTATION_URL,
   ),

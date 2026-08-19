@@ -3,8 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
+  outputFileTracingIncludes: {
+    "/api/downloads/whatsapp-guide": ["./whatsapp-views-to-sales-video-slides.pdf"],
   },
   headers: async () => [
     {

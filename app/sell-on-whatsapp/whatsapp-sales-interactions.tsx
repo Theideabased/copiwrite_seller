@@ -89,7 +89,7 @@ export function MobileCta({
     return () => observerRef.current?.disconnect();
   }, []);
 
-  const href = priceReached ? checkoutUrl : "#product";
+  const href = priceReached ? checkoutUrl : "#offer";
   const label = priceReached
     ? hasConfiguredPrice
       ? `Get access — ${price}`

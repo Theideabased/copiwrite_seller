@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowDown, ArrowRight, Check } from "lucide-react";
 import { offerConfig } from "./offer-config";
 import styles from "./page.module.css";
@@ -24,20 +25,59 @@ const salesChain = [
 
 const deliverables = [
   {
-    title: "The complete step-by-step implementation system",
+    title: "The Status Attention System",
     benefit:
-      "Work through your WhatsApp sales process in order instead of collecting random tips.",
+      "Know how to open your status so the right people have a reason to stop, tap and keep watching.",
   },
   {
-    title: "The WhatsApp Sales Diagnostic",
+    title: "The What-To-Post Sales Map",
     benefit:
-      "Identify whether your real problem is audience, attention, views, trust, conversion, closing or follow-up.",
+      "Turn random product posts into a deliberate sequence that builds trust, desire and action.",
   },
   {
-    title: "The Implementation Checklist",
+    title: "The Views-To-Conversation Method",
     benefit:
-      "Turn what you learn into actions you can complete, review and improve in your own business.",
+      "Move interested viewers from silent watching to asking questions and starting a buying conversation.",
   },
+  {
+    title: "The Closing And Follow-Up Process",
+    benefit:
+      "Know what to do when somebody asks for the price, says they will get back to you or disappears.",
+  },
+  {
+    title: "Bonus: The WhatsApp Sales Diagnostic",
+    benefit:
+      "Find the exact weak link between audience, attention, views, trust, desire, closing and follow-up.",
+  },
+  {
+    title: "Bonus: The Implementation Checklist",
+    benefit:
+      "Turn every lesson into actions you can complete, review and improve inside your own business.",
+  },
+  {
+    title: "Direct Personal Access To Copiwrite",
+    benefit:
+      "Get a direct contact channel after purchase so you can ask questions when you are applying the system to your business.",
+  },
+];
+
+const auditAreas = [
+  "Your WhatsApp Status and sales flow",
+  "Your active Instagram business page",
+  "Your active TikTok business page",
+  "Your active Facebook business page",
+  "Your offer, trust signals and calls to action",
+  "Your biggest sales gaps, ranked by priority",
+];
+
+const discoveryBullets = [
+  "How to earn attention from your first WhatsApp status without begging for views, dancing on camera or posting all day.",
+  "The status-posting mistake that trains good customers to tap past your business before they even see the offer.",
+  "What to post before you reveal your price so people understand the value before they judge the number.",
+  "How to build trust when people know what you sell but still do not feel ready to buy from you.",
+  "The dirty truth about “How much?” and why answering with only a price can quietly kill a sale.",
+  "What you should never send when a prospect goes silent and how to follow up without sounding desperate or pushy.",
+  "How to locate the exact leak between contacts, views, trust, desire, conversations and sales instead of changing everything at once.",
 ];
 
 const faqs = [
@@ -49,7 +89,27 @@ const faqs = [
   {
     question: "Will this guarantee that I make sales?",
     answer:
-      "No honest person can guarantee that. Your product, market, offer, pricing and implementation all affect your result. This system helps you identify and improve the WhatsApp sales process you can control.",
+      "Your result still depends on your product, offer, market and implementation. Complete the lessons and apply every guideline back-to-back. If you still do not make a sale, message us and we will help you identify where the process is getting stuck. If you want us to implement the complete system for your business, that is available as a separate paid service.",
+  },
+  {
+    question: "Can you implement everything for my business?",
+    answer:
+      "Yes. If you would rather have us review your business and implement the system with you, message us for a separate implementation quote. This done-for-you service is not included in the ₦5,000 product price.",
+  },
+  {
+    question: "What is included in the first-20 buyer audit?",
+    answer:
+      "We will review the selling presence for one business: your WhatsApp Status and sales process, plus the active Instagram, TikTok and Facebook business pages you submit. You will receive a detailed, prioritized report showing what is weakening attention, trust, your offer, calls to action and follow-up. This is an audit and action report; done-for-you implementation remains a separate paid service.",
+  },
+  {
+    question: "How do I know if I qualify for the free audit?",
+    answer:
+      "The audit is reserved for the first 20 verified buyers. If your purchase is within those first 20, we will contact you with instructions for submitting one business and its active selling pages. Once all 20 places have been claimed, this bonus closes.",
+  },
+  {
+    question: "What does direct personal access mean?",
+    answer:
+      "After purchase, you will receive a direct contact channel for asking questions about applying the lessons to your business. It gives you guidance when you get stuck; it does not include unlimited done-for-you content, page management or full implementation.",
   },
   {
     question: "Do I have to watch the video before I can buy?",
@@ -97,20 +157,13 @@ export default function SellOnWhatsAppPage() {
 
         <div className={styles.afterVideoOffer}>
           <div>
-            <span>Ready to stop guessing what to post?</span>
-            <strong>Get the step-by-step implementation system.</strong>
-            <p>
-              Find what is stopping your WhatsApp views or sales—and know what
-              to implement next.
+            <strong>{price} · One-time payment</strong>
+            <p className={styles.launchTeaser}>
+              Be the first 20 and we will help you review all your social media page for FREE
             </p>
-            <small>
-              {offerConfig.hasConfiguredPrice
-                ? `${productName} · ${price} · One-time payment`
-                : "Final price coming soon"}
-            </small>
           </div>
           <a href={checkoutUrl}>
-            Get The Complete System
+            Start Implementing Now
             <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
@@ -127,13 +180,17 @@ export default function SellOnWhatsAppPage() {
           <h2>You Can Post Every Day And Still Be Fixing The Wrong Problem.</h2>
 
           <p>
-            You save more contacts. You post consistently. You add your price.
-            You tell people to patronize you. Then you check your views again
-            and again, hoping today will be different.
+            You have tried posting more. Adding your price. Sharing product
+            pictures. Running discounts. Saving more contacts. Telling people
+            to patronize you.
+          </p>
+          <p>
+            Still, you check your views again and again hoping today will be
+            different.
           </p>
           <p>
             Sometimes the views are low. Sometimes people watch and say
-            nothing. Sometimes someone asks, “How much?”—then disappears the
+            nothing. Sometimes someone asks, “How much?” then disappears the
             moment you reply.
           </p>
           <p>
@@ -149,8 +206,8 @@ export default function SellOnWhatsAppPage() {
           </div>
 
           <p className={styles.pullQuote}>
-            When you don&apos;t know which part is broken, every new WhatsApp tip
-            becomes another guess.
+            More views can help. But views alone do not create trust, answer
+            objections or close a sale.
           </p>
         </article>
       </section>
@@ -225,14 +282,69 @@ export default function SellOnWhatsAppPage() {
         </article>
       </section>
 
+      <section className={styles.discoverySection}>
+        <article className={styles.letter}>
+          <p className={styles.chapter}>Inside the complete system</p>
+          <h2>What Changes When You Stop Treating Your Status Like A Digital Price List?</h2>
+          <p className={styles.discoveryLead}>
+            You stop hoping that another “Available now” post will suddenly do
+            what the last twenty could not. You start using each status for a
+            specific job in the sale.
+          </p>
+
+          <ul className={styles.discoveryBullets}>
+            {discoveryBullets.map((bullet) => (
+              <li key={bullet}>
+                <Check size={20} aria-hidden="true" />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className={styles.pullQuote}>
+            You do not need to become a content creator. You need to know what
+            each post is supposed to make the buyer think, feel or do next.
+          </p>
+        </article>
+      </section>
+
+      <section className={styles.proofSection}>
+        <figure className={`${styles.letter} ${styles.proofBlock}`}>
+          <p className={styles.chapter}>A real WhatsApp business result</p>
+          <blockquote>
+            “With the help I received, Nita Watches has made over ₦2 million
+            in jewellery sales through WhatsApp even though I do not have a
+            physical store.”
+          </blockquote>
+          <figcaption className={styles.proofFooter}>
+            <Image
+              className={styles.proofAvatar}
+              src="/testimonials/benita-nita-watches.png"
+              alt="Benita, founder of Nita Watches in Port Harcourt"
+              width={72}
+              height={72}
+              sizes="72px"
+            />
+            <p className={styles.proofAttribution}>
+              <strong>Benita</strong>
+              <span>Founder, Nita Watches · Port Harcourt</span>
+            </p>
+            <p className={styles.proofResult}>
+              <strong>₦2M+</strong>
+              <span>WhatsApp jewellery sales · No physical store</span>
+            </p>
+          </figcaption>
+        </figure>
+      </section>
+
       <section className={styles.offerSection} id="offer">
         <div className={styles.offerCard}>
           <div className={styles.offerIntro}>
             <p className={styles.chapter}>Introducing the implementation system</p>
             <h2>{productName}</h2>
             <p>
-              Know where your WhatsApp selling process is leaking—and follow a
-              clear path for deciding what to implement next.
+              Turn your WhatsApp Status from a collection of product posts into
+              a guided sales conversation one deliberate step at a time.
             </p>
             <p className={styles.notTips}>This is a process to work through, not content to consume and forget.</p>
           </div>
@@ -260,26 +372,77 @@ export default function SellOnWhatsAppPage() {
             </ul>
           </div>
 
+          <div className={styles.bonusStack}>
+            <p className={styles.bonusBadge}>
+              Limited launch bonus · First 20 verified buyers only
+            </p>
+            <h3>We Will Review Your Social-Selling Presence For Free.</h3>
+            <p className={styles.bonusLead}>
+              You will not be left wondering whether you applied the system
+              correctly. If you are among the first 20 verified buyers, submit
+              one business and we will examine the places where you actively
+              sell not only WhatsApp.
+            </p>
+            <ul className={styles.bonusGrid}>
+              {auditAreas.map((area) => (
+                <li key={area}>
+                  <Check size={18} aria-hidden="true" />
+                  <span>{area}</span>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.reportPromise}>
+              <strong>Your result: a detailed, prioritized action report.</strong>
+              <p>
+                You will see what is helping, what is costing you attention or
+                trust, and what to fix first across the channels you submit.
+              </p>
+            </div>
+            <p className={styles.personalAccess}>
+              <strong>Every buyer also gets direct personal access to Copiwrite</strong>
+              <span>
+                Ask implementation questions when you get stuck instead of
+                abandoning the system halfway.
+              </span>
+            </p>
+            <p className={styles.bonusLimit}>
+              The free audit covers one business per eligible buyer. It is an
+              audit and report, not done-for-you implementation. Once the first
+              20 verified purchases are claimed, this bonus closes.
+            </p>
+          </div>
+
           <div className={styles.fitSection}>
             <div>
               <h3>This is for you if...</h3>
-              <p>You already use WhatsApp to sell and want a structured way to improve low views, weak response or lost enquiries.</p>
+              <p>You sell a real product or service on WhatsApp, are willing to follow the lessons in order and want a structured way to improve low views, weak response or lost enquiries.</p>
             </div>
             <div>
               <h3>This is not for you if...</h3>
-              <p>You want guaranteed income, an overnight trick, or a result without changing how you post, sell and follow up.</p>
+              <p>You want an overnight trick, refuse to change how you post and follow up, or expect customers to buy without giving them a clear reason.</p>
             </div>
           </div>
 
           <div className={styles.honestNote}>
-            <h3>“What if I pay and nothing changes about my sales?”</h3>
+            <p className={styles.guaranteeLabel}>Implementation support when you need it</p>
+            <h3>Follow Everything. Still No Sale? Bring It To Us.</h3>
             <p>
-              That is a fair question. Your product, market, offer, price and
-              implementation still matter, so there is no honest way to
-              guarantee income. What this system removes is the blind guessing:
-              you will know what to examine, what to change, what to test and
-              what to work on next.
+              Complete the lessons. Use the diagnostic. Apply every guideline
+              back-to-back across your status, offer, conversations and
+              follow-up. If you still do not make a sale, message us.
             </p>
+            <p>
+              We will help you identify where the process is getting stuck. If
+              you want us to personally implement the complete system for your
+              business, you can hire us separately for that service. The
+              implementation fee is not included in the {price} product price.
+            </p>
+            <a
+              className={styles.guaranteeContact}
+              href="mailto:info@copiwrite.com?subject=WhatsApp%20Views-to-Sales%20Implementation%20Promise"
+            >
+              Ask about personal implementation
+            </a>
           </div>
 
           <div className={styles.price} id="price">
@@ -298,10 +461,13 @@ export default function SellOnWhatsAppPage() {
               </small>
             </div>
             <a className={styles.buyButton} href={checkoutUrl}>
-              Get {productName}
+              Start Implementing Now
               <ArrowRight size={19} aria-hidden="true" />
             </a>
-            <p className={styles.priceReassurance}>One clear system. One payment. Implement at your own pace.</p>
+            <p className={styles.auditReminder}>
+              Be the first 20 and we will help you review all your social media page for FREE
+            </p>
+            <p className={styles.priceReassurance}>One clear system. One payment. Direct personal access is included. Done-for-you implementation is available as a separate paid service.</p>
           </div>
         </div>
       </section>
@@ -350,18 +516,29 @@ export default function SellOnWhatsAppPage() {
           <h2>The Next Time Your Views Drop, You Should Know What To Look At.</h2>
           <p>
             And when people view without buying, you should know the next part
-            of the process to examine—instead of blaming your customers,
+            of the process to examine instead of blaming your customers,
             dropping your price or posting twenty more products.
           </p>
           <p>
             {productName} gives you a process you can return to whenever your
-            WhatsApp sales feel stuck.
+            WhatsApp sales feel stuck—and direct access to ask for guidance
+            while you put it to work.
+          </p>
+          <p className={styles.finalBonus}>
+            <strong>
+              For the first 20 people we will review all your social media for FREE
+            </strong>
           </p>
           <p className={styles.finalPrice}>{productName} · {price}</p>
           <a className={styles.buyButton} href={checkoutUrl}>
-            Get The Complete System
+            Start Implementing Now
             <ArrowRight size={19} aria-hidden="true" />
           </a>
+          <p className={styles.postscript}>
+            <strong>P.S.</strong> If you keep posting the same way, the result
+            has no reason to change. Your next status can be another guess or
+            the first step in a sales system you finally understand.
+          </p>
         </div>
       </section>
 

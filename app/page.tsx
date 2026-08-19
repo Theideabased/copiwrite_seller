@@ -84,7 +84,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow reveal">Strategy · Copy · Campaigns · Sales</p>
             <h1 className="reveal reveal-delay-1">
-              Turn what you sell into words <em>people act on.</em>
+              Let&apos;s help you get more customer <em>that will buy online</em>
             </h1>
             <p className="hero-intro reveal reveal-delay-2">
               Copiwrite helps ambitious teams clarify their value, sharpen their story, and build marketing that creates better sales conversations.

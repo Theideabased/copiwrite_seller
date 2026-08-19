@@ -1,0 +1,137 @@
+.page {
+  --result-paper: oklch(0.995 0.004 95);
+  --result-bg: oklch(0.965 0.018 145);
+  --result-ink: oklch(0.2 0.015 150);
+  --result-muted: oklch(0.43 0.02 150);
+  --result-line: oklch(0.85 0.018 145);
+  --result-green: oklch(0.46 0.14 150);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--result-bg);
+  color: var(--result-ink);
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  width: min(100%, 38rem);
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  border: 1px solid var(--result-line);
+  border-radius: 0.6rem;
+  background: var(--result-paper);
+  box-shadow: 0 1.5rem 4rem oklch(0.2 0.02 150 / 0.08);
+  text-align: center;
+}
+
+.icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+}
+
+.success {
+  background: oklch(0.92 0.07 150);
+  color: oklch(0.34 0.105 150);
+}
+
+.warning {
+  background: oklch(0.94 0.055 82);
+  color: oklch(0.42 0.1 65);
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--result-green);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.card > p:not(.eyebrow) {
+  margin: 1.25rem auto 0;
+  color: var(--result-muted);
+  line-height: 1.7;
+}
+
+.reference {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--result-line);
+  background: var(--result-bg);
+}
+
+.reference span {
+  color: var(--result-muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reference code {
+  overflow-wrap: anywhere;
+  font-size: 0.8rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.actions a {
+  min-height: 2.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--result-line);
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.actions .primary {
+  border-color: var(--result-green);
+  background: var(--result-green);
+  color: white;
+}
+
+.actions .secondary {
+  background: transparent;
+}
+
+.card > small {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--result-muted);
+}
+
+.card > small a {
+  color: var(--result-green);
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.page :where(a):focus-visible {
+  outline: 3px solid var(--result-green);
+  outline-offset: 3px;
+}

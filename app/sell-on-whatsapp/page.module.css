@@ -213,6 +213,11 @@
   line-height: 1.5;
 }
 
+.afterVideoOffer .launchTeaser {
+  color: var(--letter-accent-dark);
+  font-weight: 800;
+}
+
 .afterVideoOffer a,
 .implementationHelp a {
   min-height: 2.9rem;
@@ -244,6 +249,8 @@
 .letterSection,
 .changesSection,
 .systemSection,
+.discoverySection,
+.proofSection,
 .faqSection,
 .finalSection {
   padding: clamp(4.5rem, 9vw, 7rem) 0;
@@ -254,6 +261,114 @@
 .systemSection,
 .finalSection {
   background: var(--letter-paper);
+}
+
+.discoverySection {
+  background: var(--letter-bg);
+}
+
+.proofSection {
+  background: var(--letter-paper);
+}
+
+.proofBlock {
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid var(--letter-line);
+  background: var(--letter-bg);
+}
+
+.proofAvatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.proofBlock blockquote {
+  margin: 0;
+  color: var(--letter-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3.4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.proofFooter {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--letter-line);
+}
+
+.proofAttribution {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+}
+
+.proofAttribution strong {
+  font-size: 0.9rem;
+}
+
+.proofAttribution span {
+  color: var(--letter-muted);
+  font-size: 0.78rem;
+}
+
+.proofResult {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  text-align: right;
+}
+
+.proofResult strong {
+  color: var(--letter-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.proofResult span {
+  max-width: 12rem;
+  color: var(--letter-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.discoveryLead {
+  margin-bottom: 2rem !important;
+}
+
+.discoveryBullets {
+  display: grid;
+  gap: 0;
+  margin: 2.5rem 0;
+  padding: 0;
+  border-top: 1px solid var(--letter-line);
+  list-style: none;
+}
+
+.discoveryBullets li {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.85rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--letter-line);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.discoveryBullets svg {
+  margin-top: 0.25rem;
+  color: var(--letter-accent-dark);
 }
 
 .letter,
@@ -531,6 +646,7 @@
 .offerIntro,
 .transformation,
 .included,
+.bonusStack,
 .fitSection,
 .honestNote,
 .price {
@@ -560,6 +676,7 @@
 
 .included,
 .transformation,
+.bonusStack,
 .fitSection,
 .honestNote,
 .price {
@@ -642,6 +759,109 @@
   line-height: 1.55;
 }
 
+.bonusStack {
+  background: oklch(0.975 0.025 92);
+}
+
+.bonusBadge {
+  width: fit-content;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  background: var(--letter-ink);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.bonusStack h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.bonusLead {
+  margin: 1rem 0 1.5rem;
+  color: var(--letter-muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.bonusGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+  background: var(--letter-line);
+  list-style: none;
+}
+
+.bonusGrid li {
+  min-height: 5.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 1rem;
+  background: var(--letter-paper);
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.bonusGrid svg {
+  flex: 0 0 auto;
+  color: var(--letter-accent-dark);
+}
+
+.reportPromise {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: var(--letter-accent);
+  color: white;
+}
+
+.reportPromise strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+}
+
+.reportPromise p {
+  margin: 0.45rem 0 0;
+  color: oklch(0.95 0.01 150);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.personalAccess {
+  display: grid;
+  gap: 0.3rem;
+  margin: 1.25rem 0 0;
+  padding: 1.15rem 0;
+  border-block: 1px solid var(--letter-line);
+}
+
+.personalAccess strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+}
+
+.personalAccess span,
+.bonusLimit {
+  color: var(--letter-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.bonusLimit {
+  margin: 1rem 0 0;
+}
+
 .fitSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -669,6 +889,31 @@
   margin: 0;
   color: var(--letter-muted);
   line-height: 1.7;
+}
+
+.honestNote p + p {
+  margin-top: 1rem;
+}
+
+.honestNote .guaranteeLabel {
+  margin-bottom: 0.75rem;
+  color: var(--letter-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.guaranteeContact {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.25rem;
+  color: var(--letter-accent-dark);
+  font-size: 0.83rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
 }
 
 .price {
@@ -704,6 +949,15 @@
   margin: -0.5rem 0 0;
   color: var(--letter-muted);
   font-size: 0.75rem;
+}
+
+.auditReminder {
+  max-width: 32rem;
+  margin: -0.25rem auto 0;
+  color: var(--letter-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .originalValue {
@@ -815,6 +1069,34 @@
   font-weight: 800;
 }
 
+.finalSection .finalBonus {
+  margin-top: 1.5rem !important;
+  padding: 1.15rem;
+  border: 1px solid var(--letter-line);
+  background: var(--letter-soft);
+  color: var(--letter-ink) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 0.86rem !important;
+  font-weight: 800;
+  line-height: 1.55 !important;
+}
+
+.finalSection .postscript {
+  max-width: 40rem;
+  margin: 2.5rem auto 0 !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--letter-line);
+  color: var(--letter-muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  text-align: left;
+}
+
+.postscript strong {
+  color: var(--letter-ink);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -887,8 +1169,20 @@
   }
 
   .salesChain,
-  .fitSection {
+  .fitSection,
+  .bonusGrid {
     grid-template-columns: 1fr;
+  }
+
+  .proofFooter {
+    grid-template-columns: auto 1fr;
+  }
+
+  .proofResult {
+    grid-column: 1 / -1;
+    padding-top: 1rem;
+    border-top: 1px solid var(--letter-line);
+    text-align: left;
   }
 
   .salesChain li {
