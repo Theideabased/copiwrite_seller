@@ -17,16 +17,15 @@ The product page is available at `/sell-on-whatsapp`. Its final commercial detai
 
 ```env
 NEXT_PUBLIC_WHATSAPP_PRODUCT_NAME=WhatsApp Views-to-Sales
-NEXT_PUBLIC_WHATSAPP_PRODUCT_PRICE=5000
 NEXT_PUBLIC_WHATSAPP_PRODUCT_ORIGINAL_VALUE=
-NEXT_PUBLIC_WHATSAPP_VIDEO_URL=https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+NEXT_PUBLIC_WHATSAPP_VIDEO_URL=https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/q_auto,f_auto/YOUR_PUBLIC_ID.mp4
 NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL=https://your-checkout-link.example
 NEXT_PUBLIC_WHATSAPP_IMPLEMENTATION_URL=
 ```
 
-The product defaults to ₦5,000. The price accepts a plain number such as `5000` and displays it as Nigerian naira, so the environment variable can override the default later. The original value and premium implementation URL are optional. When `NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL` is blank, purchase buttons use the built-in Paystack checkout at `/sell-on-whatsapp/checkout`. The premium service button stays hidden until its URL is configured.
+Upload the 1080p sales video to Cloudinary and paste its public delivery URL into `NEXT_PUBLIC_WHATSAPP_VIDEO_URL`. No Cloudinary API secret is required for playback. The product price is fixed at ₦10,000. The original value and premium implementation URL are optional. When `NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL` is blank, purchase buttons use the built-in Paystack checkout at `/sell-on-whatsapp/checkout`. The premium service button stays hidden until its URL is configured.
 
-Add `PAYSTACK_PUBLIC_KEY`, `PAYSTACK_SECRET_KEY`, `PAYSTACK_CALLBACK_URL`, `RESEND_API_KEY`, `CONTACT_FROM`, and optionally `DELIVERY_ACCESS_SECRET` to `.env.local` and to the Vercel project environment variables. Use `https://your-domain.com/payment/verify` as the callback URL. The server fixes the product price at ₦5,000 (500,000 kobo), initializes payment with the secret key, and verifies status, amount and currency after Paystack redirects the buyer back.
+Add `PAYSTACK_PUBLIC_KEY`, `PAYSTACK_SECRET_KEY`, `PAYSTACK_CALLBACK_URL`, `RESEND_API_KEY`, `CONTACT_FROM`, `CONTACT_REPLY_TO`, and optionally `DELIVERY_ACCESS_SECRET` to `.env.local` and to the Vercel project environment variables. `CONTACT_FROM` must use a domain verified in Resend; replies can still go to a Gmail address through `CONTACT_REPLY_TO`. Use `https://your-domain.com/payment/verify` as the callback URL. The server fixes the product price at ₦10,000 (1,000,000 kobo), initializes payment with the secret key, and verifies status, amount and currency after Paystack redirects the buyer back.
 
 After verification, each buyer is redirected to a signed private access page where the included `whatsapp-views-to-sales-video-slides.pdf` file can be downloaded. The verified callback also emails the access link through Resend and sends the purchase to Telegram. Set `DELIVERY_ACCESS_SECRET` to a long random value in production; when omitted, the Paystack secret is used to sign access links.
 

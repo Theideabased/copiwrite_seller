@@ -36,7 +36,7 @@ Your customers do not open WhatsApp hoping to study a digital price list. So whe
 
 That is why posting more is not always the answer.
 
-There are five links you need to examine: attention, content, trust, desire and follow-up.
+There are five links you need to examine
 
 Let us go through them.
 
@@ -110,7 +110,11 @@ Instead of “We don't have it,” say, “That option is sold out, but I can re
 
 You are not pretending. You are reducing uncertainty and communicating like a professional.
 
-I have seen what can happen when a business treats WhatsApp as a real selling system. Nita Watches, a jewellery business in Port Harcourt, has made more than ₦2 million in sales through WhatsApp without a physical store.
+I have seen what can happen when a business treats WhatsApp as a real selling system.
+
+Benita, the founder of Nita Watches in Port Harcourt, says:
+
+> “With the help I received, Nita Watches has made over ₦2 million in jewellery sales through WhatsApp—even without a physical store.”
 
 That is not a promise that every business will make the same amount. It is evidence that WhatsApp can become a serious sales channel when the business, offer and process work together.
 
@@ -236,7 +240,7 @@ The audit tells you what to correct. If you later want us to create, manage or i
 
 That is a fair question.
 
-I will not promise that paying ₦5,000 will suddenly make every business rich. Your product, market, offer, pricing and execution still matter.
+I will not promise that buying this system will suddenly make every business rich. Your product, market, offer, pricing and execution still matter.
 
 What I can give you is a structured process, a way to diagnose what is broken and direct access to ask for guidance while you apply it.
 
@@ -246,9 +250,40 @@ If you still do not make a sale, message us. We will help you identify where the
 
 And if you want us to personally implement the complete system for your business, you can hire us separately for that work.
 
-## The Offer And Call To Action
+## The Value You Receive
 
-You can get the complete **WhatsApp Views-to-Sales** system today for a one-time payment of **₦5,000**.
+Before I tell you what you will pay, look at what is included.
+
+And remember the result you saw from Benita of Nita Watches: more than ₦2 million in jewellery sales through WhatsApp without a physical store.
+
+Her result did not come from treating WhatsApp like a place to dump product pictures and prices. It came from using WhatsApp as a real sales channel—with the right attention, trust, offer and follow-up working together.
+
+That is the kind of process this system helps you understand and implement in your own business. Your result will depend on your market, offer and execution, but you will no longer be left guessing about the process.
+
+If each part of this system were offered separately, here is how I would value it:
+
+- The **Status Attention System** — **₦15,000**.
+- The **What-To-Post Sales Map** — **₦20,000**.
+- The **Views-to-Conversation Method** — **₦15,000**.
+- The **Closing and Follow-Up Process** — **₦20,000**.
+- The **WhatsApp Sales Diagnostic and Implementation Checklist** — **₦10,000**.
+- Direct personal access to Copiwrite for implementation questions — **₦15,000**.
+
+That gives the core system a total standalone value of **₦95,000**.
+
+And if you are among the first 20 verified buyers, you also receive the multi-platform social-sales audit and detailed action report, valued at **₦30,000**.
+
+That means the first 20 buyers receive up to **₦125,000 in total value**.
+
+You are not buying one random PDF. You are getting the strategy, diagnostic tools, implementation plan, follow-up process and direct support needed to see what is failing and know what to do next.
+
+## The Price And Call To Action
+
+I am not asking you to pay ₦125,000.
+
+I am not even asking you to pay the ₦95,000 value of the core system.
+
+You can get the complete **WhatsApp Views-to-Sales** system today for a one-time payment of just **₦10,000**.
 
 You receive the complete system, the diagnostic, the implementation checklist and direct personal access to Copiwrite.
 
@@ -260,6 +295,6 @@ Or your next Status can be the first step in a sales process you finally underst
 
 Click the button that says **“Start Implementing Now.”**
 
-Get WhatsApp Views-to-Sales for ₦5,000 and begin with the diagnostic.
+Get WhatsApp Views-to-Sales for ₦10,000 and begin with the diagnostic.
 
 **P.S.** The core system will still help you after the first 20 places are gone. But the personal multi-platform audit requires our time, so that bonus ends after the first 20 verified buyers. If you want us to examine your business and show you what to fix first, buy now while a place is still available.

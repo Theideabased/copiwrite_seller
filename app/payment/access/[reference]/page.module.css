@@ -1,20 +1,51 @@
 .page {
+  --result-bg: oklch(0.995 0.004 95);
+  --result-paper: oklch(1 0 0);
+  --result-ink: oklch(0.2 0.015 150);
+  --result-muted: oklch(0.42 0.018 150);
+  --result-line: oklch(0.88 0.012 145);
+  --result-soft: oklch(0.965 0.018 145);
+  --result-green: oklch(0.48 0.135 150);
+  --result-green-dark: oklch(0.38 0.12 150);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--result-bg);
+  color: var(--result-ink);
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand {
+  width: min(100%, 44rem);
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: clamp(1.5rem, 5vw, 3rem);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.brand span {
+  width: 2rem;
+  height: 2rem;
   display: grid;
   place-items: center;
-  padding: 1.5rem;
-  background: var(--gradient-bg);
-  color: var(--foreground);
-  color-scheme: light;
+  border-radius: 50%;
+  background: var(--result-green);
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .shell {
   width: min(100%, 44rem);
   padding: clamp(1.5rem, 5vw, 3.5rem);
-  border: 1px solid var(--border);
+  border: 1px solid var(--result-line);
   border-radius: 0.8rem;
-  background: var(--card);
-  box-shadow: 0 1.5rem 4rem var(--shadow-color);
+  background: var(--result-paper);
 }
 
 .confirmation {
@@ -30,15 +61,15 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--primary);
+  background: var(--result-soft);
+  color: var(--result-green-dark);
 }
 
 .confirmation p,
 .fileCopy p {
   margin: 0 0 0.35rem;
-  color: var(--primary);
-  font-family: var(--font-code);
+  color: var(--result-green-dark);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.7rem;
   font-weight: 750;
   letter-spacing: 0.08em;
@@ -47,7 +78,7 @@
 
 .confirmation h1 {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.25rem, 7vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.045em;
@@ -57,7 +88,7 @@
 .intro {
   max-width: 38rem;
   margin: 1.5rem 0 2rem;
-  color: var(--muted-foreground);
+  color: var(--result-muted);
   line-height: 1.7;
 }
 
@@ -67,9 +98,9 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--result-line);
   border-radius: 0.65rem;
-  background: var(--background);
+  background: var(--result-bg);
 }
 
 .fileIcon {
@@ -78,8 +109,8 @@
   display: grid;
   place-items: center;
   border-radius: 0.55rem;
-  background: var(--accent);
-  color: var(--primary);
+  background: var(--result-soft);
+  color: var(--result-green-dark);
 }
 
 .fileCopy h2 {
@@ -91,7 +122,7 @@
 .fileCopy span {
   display: block;
   margin-top: 0.25rem;
-  color: var(--muted-foreground);
+  color: var(--result-muted);
   font-size: 0.75rem;
 }
 
@@ -102,9 +133,9 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  border-radius: var(--radius);
-  background: var(--primary);
-  color: var(--primary-foreground);
+  border-radius: 0.4rem;
+  background: var(--result-green);
+  color: white;
   font-size: 0.82rem;
   font-weight: 800;
 }
@@ -120,14 +151,14 @@
   align-items: flex-start;
   gap: 0.65rem;
   margin: 0;
-  color: var(--muted-foreground);
+  color: var(--result-muted);
   font-size: 0.82rem;
 }
 
 .notes svg {
   flex: 0 0 auto;
   margin-top: 0.2rem;
-  color: var(--primary);
+  color: var(--result-green-dark);
 }
 
 .reference {
@@ -135,11 +166,11 @@
   gap: 0.3rem;
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--result-line);
 }
 
 .reference span {
-  color: var(--muted-foreground);
+  color: var(--result-muted);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -154,17 +185,17 @@
 .shell > small {
   display: block;
   margin-top: 1rem;
-  color: var(--muted-foreground);
+  color: var(--result-muted);
 }
 
 .shell > small a {
-  color: var(--primary);
+  color: var(--result-green-dark);
   font-weight: 800;
   text-decoration: underline;
 }
 
 .page :where(a):focus-visible {
-  outline: 3px solid var(--ring);
+  outline: 3px solid var(--result-green);
   outline-offset: 3px;
 }
 

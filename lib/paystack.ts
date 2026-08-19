@@ -3,7 +3,7 @@ import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 export const WHATSAPP_PRODUCT = {
   id: "whatsapp-views-to-sales",
   name: "WhatsApp Views-to-Sales",
-  amountKobo: 500_000,
+  amountKobo: 1_000_000,
   currency: "NGN",
 } as const;
 

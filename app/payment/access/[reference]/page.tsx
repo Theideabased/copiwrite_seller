@@ -39,6 +39,10 @@ export default async function BuyerAccessPage({ params, searchParams }: PageProp
 
   return (
     <main className={styles.page}>
+      <a className={styles.brand} href="/sell-on-whatsapp">
+        <span aria-hidden="true">W</span>
+        WhatsApp Views-to-Sales
+      </a>
       <section className={styles.shell}>
         <div className={styles.confirmation}>
           <span className={styles.check} aria-hidden="true"><Check size={22} /></span>

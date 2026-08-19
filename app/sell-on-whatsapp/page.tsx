@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "Can you implement everything for my business?",
     answer:
-      "Yes. If you would rather have us review your business and implement the system with you, message us for a separate implementation quote. This done-for-you service is not included in the ₦5,000 product price.",
+      "Yes. If you would rather have us review your business and implement the system with you, message us for a separate implementation quote. This done-for-you service is not included in the ₦10,000 product price.",
   },
   {
     question: "What is included in the first-20 buyer audit?",

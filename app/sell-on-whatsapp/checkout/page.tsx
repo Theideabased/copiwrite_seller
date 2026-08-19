@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Check, LockKeyhole } from "lucide-react";
+import { LockKeyhole } from "lucide-react";
 import { CheckoutForm } from "./checkout-form";
 import styles from "./page.module.css";
 
@@ -19,24 +19,8 @@ export default function WhatsAppCheckoutPage() {
 
       <div className={styles.checkoutGrid}>
         <section className={styles.summary} aria-labelledby="order-heading">
-          <p className={styles.eyebrow}>Your order</p>
-          <h1 id="order-heading">Start turning views into sales.</h1>
-          <p className={styles.intro}>
-            Enter your details, then continue to Paystack to complete your secure payment.
-          </p>
-
-          <ul>
-            <li><Check size={18} aria-hidden="true" />Complete implementation system</li>
-            <li><Check size={18} aria-hidden="true" />Sales diagnostic and checklist</li>
-            <li><Check size={18} aria-hidden="true" />Direct personal access to Copiwrite</li>
-            <li><Check size={18} aria-hidden="true" />First-20 audit, while places remain</li>
-          </ul>
-
-          <div className={styles.total}>
-            <span>Total</span>
-            <strong>₦5,000</strong>
-            <small>One-time payment</small>
-          </div>
+          <h1 id="order-heading">Complete your order.</h1>
+          <p className={styles.total}><strong>₦10,000</strong><span>One-time payment</span></p>
         </section>
 
         <section className={styles.formCard} aria-labelledby="buyer-heading">
@@ -44,7 +28,7 @@ export default function WhatsAppCheckoutPage() {
             <LockKeyhole size={16} aria-hidden="true" />
             Secure Paystack checkout
           </div>
-          <h2 id="buyer-heading">Where should we send your access?</h2>
+          <h2 id="buyer-heading">Enter your details</h2>
           <CheckoutForm />
         </section>
       </div>

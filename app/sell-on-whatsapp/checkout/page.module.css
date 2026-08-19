@@ -1,13 +1,13 @@
 .page {
-  --checkout-paper: oklch(0.99 0.006 95);
-  --checkout-bg: oklch(0.965 0.018 145);
+  --checkout-paper: oklch(1 0 0);
+  --checkout-bg: oklch(0.995 0.004 95);
   --checkout-ink: oklch(0.2 0.015 150);
   --checkout-muted: oklch(0.43 0.02 150);
   --checkout-line: oklch(0.85 0.018 145);
   --checkout-green: oklch(0.46 0.14 150);
   --checkout-green-dark: oklch(0.34 0.105 150);
   min-height: 100vh;
-  padding: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1rem, 3vw, 2rem);
   background: var(--checkout-bg);
   color: var(--checkout-ink);
   color-scheme: light;
@@ -41,91 +41,44 @@
 }
 
 .checkoutGrid {
-  width: min(100%, 64rem);
+  width: min(100%, 34rem);
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(2rem, 7vw, 6rem);
-  align-items: center;
-  margin: clamp(2.5rem, 7vw, 5rem) auto 0;
-}
-
-.eyebrow {
-  margin: 0 0 1rem;
-  color: var(--checkout-green-dark);
-  font-size: 0.7rem;
-  font-weight: 900;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  gap: 1rem;
+  margin: clamp(1.25rem, 4vw, 2.25rem) auto 0;
 }
 
 .summary h1 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.75rem, 6vw, 5.25rem);
-  letter-spacing: -0.05em;
-  line-height: 0.98;
-}
-
-.intro {
-  margin: 1.5rem 0;
-  color: var(--checkout-muted);
-  line-height: 1.7;
-}
-
-.summary ul {
-  display: grid;
-  gap: 0.8rem;
-  margin: 2rem 0;
-  padding: 0;
-  list-style: none;
-}
-
-.summary li {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.85rem;
-  font-weight: 800;
-}
-
-.summary li svg {
-  flex: 0 0 auto;
-  color: var(--checkout-green-dark);
+  font-size: clamp(2rem, 8vw, 3rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
 }
 
 .total {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 0.25rem 1rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--checkout-line);
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin: 0.65rem 0 0;
+}
+
+.total strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  line-height: 1;
 }
 
 .total span {
   color: var(--checkout-muted);
   font-size: 0.75rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.total strong {
-  grid-row: span 2;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.5rem;
-  line-height: 1;
-}
-
-.total small {
-  color: var(--checkout-muted);
+  font-weight: 800;
 }
 
 .formCard {
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.25rem, 4vw, 2rem);
   border: 1px solid var(--checkout-line);
   border-radius: 0.6rem;
   background: var(--checkout-paper);
-  box-shadow: 0 1.5rem 4rem oklch(0.2 0.02 150 / 0.08);
 }
 
 .secureLabel {
@@ -140,9 +93,9 @@
 }
 
 .formCard h2 {
-  margin: 0.75rem 0 1.75rem;
+  margin: 0.55rem 0 1.25rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
   letter-spacing: -0.035em;
   line-height: 1.05;
 }
@@ -258,8 +211,11 @@
 }
 
 @media (max-width: 760px) {
+  .page {
+    padding-inline: 1rem;
+  }
+
   .checkoutGrid {
-    grid-template-columns: 1fr;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }

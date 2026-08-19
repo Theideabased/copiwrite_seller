@@ -113,7 +113,7 @@ export function CheckoutForm() {
         {submitting ? (
           <><LoaderCircle className={styles.spinner} size={19} aria-hidden="true" />Opening secure checkout</>
         ) : (
-          <>Pay ₦5,000 Securely <ArrowRight size={19} aria-hidden="true" /></>
+          <>Pay ₦10,000 Securely <ArrowRight size={19} aria-hidden="true" /></>
         )}
       </button>
       <p className={styles.paymentNote}>Your payment details are entered securely on Paystack.</p>

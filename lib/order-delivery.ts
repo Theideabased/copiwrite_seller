@@ -63,6 +63,7 @@ function whatsappUrl(phone: string) {
 async function sendAccessEmail(verification: PaystackVerification, accessUrl: string) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   const from = process.env.CONTACT_FROM?.trim();
+  const replyTo = process.env.CONTACT_REPLY_TO?.trim();
   const { email, name, reference } = buyerDetails(verification);
 
   if (!apiKey || !from || !email) {
@@ -87,17 +88,19 @@ async function sendAccessEmail(verification: PaystackVerification, accessUrl: st
       },
       body: JSON.stringify({
         from,
+        ...(replyTo ? { reply_to: replyTo } : {}),
         to: [email],
         subject: "Your WhatsApp Views-to-Sales guide is ready",
         html: `
-          <div style="background:#f7f2e9;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#2c211c">
-            <div style="max-width:600px;margin:0 auto;background:#fffdf9;border:1px solid #ded2c5;padding:32px">
-              <p style="margin:0 0 12px;color:#b74720;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Payment confirmed</p>
-              <h1 style="margin:0 0 16px;font-family:Georgia,serif;font-size:32px;line-height:1.1">Your guide is ready, ${escapeHtml(firstName)}.</h1>
-              <p style="margin:0 0 24px;line-height:1.65;color:#62544b">Open your private access page to download the WhatsApp Views-to-Sales step-by-step guide.</p>
-              <a href="${escapeHtml(accessUrl)}" style="display:inline-block;background:#b74720;color:#fff;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:6px">Open your guide</a>
-              <p style="margin:24px 0 0;font-size:13px;line-height:1.6;color:#62544b">Keep this email. Your payment reference is <strong>${escapeHtml(reference)}</strong>.</p>
-              <p style="margin:12px 0 0;font-size:13px;line-height:1.6;color:#62544b">Need help? Reply to this email or contact <a href="mailto:info@copiwrite.com" style="color:#b74720">info@copiwrite.com</a>.</p>
+          <div style="background:#f4f8f5;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#172d22">
+            <div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #d5e3d9;padding:32px">
+              <div style="margin:0 0 28px;font-size:14px;font-weight:800;color:#173d29"><span style="display:inline-block;width:30px;height:30px;margin-right:9px;border-radius:50%;background:#167548;color:#fff;font-family:Georgia,serif;font-size:18px;line-height:30px;text-align:center;vertical-align:middle">W</span>WhatsApp Views-to-Sales</div>
+              <p style="margin:0 0 12px;color:#17653f;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Payment confirmed</p>
+              <h1 style="margin:0 0 16px;font-family:Georgia,serif;font-size:32px;line-height:1.1;color:#172d22">Your guide is ready, ${escapeHtml(firstName)}.</h1>
+              <p style="margin:0 0 24px;line-height:1.65;color:#4f6659">Open your private access page to download the WhatsApp Views-to-Sales step-by-step guide.</p>
+              <a href="${escapeHtml(accessUrl)}" style="display:inline-block;background:#167548;color:#fff;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:6px">Open your guide</a>
+              <p style="margin:24px 0 0;font-size:13px;line-height:1.6;color:#4f6659">Keep this email. Your payment reference is <strong>${escapeHtml(reference)}</strong>.</p>
+              <p style="margin:12px 0 0;font-size:13px;line-height:1.6;color:#4f6659">Need help? Reply to this email or contact <a href="mailto:info@copiwrite.com" style="color:#17653f;font-weight:700">info@copiwrite.com</a>.</p>
             </div>
           </div>`,
       }),
@@ -128,7 +131,7 @@ async function notifyTelegram(verification: PaystackVerification, accessUrl: str
   const message = [
     "<b>New WhatsApp Views-to-Sales purchase</b>",
     "",
-    "<b>Amount:</b> ₦5,000",
+    "<b>Amount:</b> ₦10,000",
     `<b>Name:</b> ${escapeHtml(name)}`,
     `<b>Email:</b> ${escapeHtml(email || "Not provided")}`,
     `<b>WhatsApp:</b> ${escapeHtml(phone || "Not provided")}`,
