@@ -7,6 +7,7 @@
   --letter-soft: oklch(0.965 0.018 145);
   --letter-accent: oklch(0.48 0.135 150);
   --letter-accent-dark: oklch(0.38 0.12 150);
+  --letter-urgent: oklch(0.46 0.19 28);
   --letter-focus: oklch(0.48 0.135 150);
   min-height: 100vh;
   background: var(--letter-bg);
@@ -247,6 +248,7 @@
 }
 
 .letterSection,
+.founderAuthoritySection,
 .changesSection,
 .systemSection,
 .discoverySection,
@@ -269,6 +271,62 @@
 
 .proofSection {
   background: var(--letter-paper);
+}
+
+.founderAuthoritySection {
+  background: var(--letter-accent-dark);
+  color: white;
+}
+
+.founderAuthority {
+  width: min(100% - 2rem, 52rem);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.founderLogo {
+  width: clamp(5.5rem, 12vw, 7rem);
+  height: auto;
+}
+
+.founderLabel {
+  margin: 0 0 1rem;
+  color: oklch(0.88 0.04 148);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founderAuthority h2 {
+  max-width: 42rem;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+.founderMessage {
+  max-width: 45rem;
+  margin: 1.25rem 0 0;
+  color: oklch(0.91 0.025 148);
+  line-height: 1.7;
+}
+
+.founderName {
+  margin: 1.5rem 0 0;
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.proofList {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .proofBlock {
@@ -776,6 +834,38 @@
   text-transform: uppercase;
 }
 
+.bonusAvailability {
+  margin: 0 0 1rem;
+  color: var(--letter-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.bonusAvailability strong,
+.launchTeaser strong,
+.auditReminder strong,
+.finalBonus strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08em;
+}
+
+.bonusAvailability .auditSlotCount,
+.launchTeaser .auditSlotCount,
+.auditReminder .auditSlotCount,
+.finalBonus .auditSlotCount {
+  color: var(--letter-urgent);
+}
+
+.bonusAvailability a,
+.launchTeaser a,
+.auditReminder a,
+.finalBonus a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
 .bonusStack h3 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -1171,6 +1261,10 @@
   .salesChain,
   .fitSection,
   .bonusGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .founderAuthority {
     grid-template-columns: 1fr;
   }
 

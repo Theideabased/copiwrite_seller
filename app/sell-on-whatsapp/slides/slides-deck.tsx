@@ -64,7 +64,27 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={3} key="broken-chain" eyebrow="The real problem">
+    <Slide number={3} key="founder-authority" className={styles.greenSlide} eyebrow="Founder proof · Used in another business">
+      <div className={styles.founderAuthoritySlide}>
+        <Image
+          src="/brands/mantajobs.png"
+          alt="Mantajobs"
+          width={1200}
+          height={1140}
+          priority
+        />
+        <div>
+          <h2>I use this system in Mantajobs.</h2>
+          <p>
+            These same WhatsApp principles helped me land projects worth up to
+            ₦10 million through WhatsApp Status.
+          </p>
+          <span>Seyi · Founder, Copiwrite &amp; Mantajobs</span>
+        </div>
+      </div>
+    </Slide>,
+
+    <Slide number={4} key="broken-chain" eyebrow="The real problem">
       <div className={styles.bigLeft}>
         <span className={styles.marker}>It may not be your product.</span>
         <h2>Your sales chain may be broken.</h2>
@@ -72,14 +92,14 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={4} key="love-buying" className={styles.inkSlide}>
+    <Slide number={5} key="love-buying" className={styles.inkSlide}>
       <div className={styles.contrastStatement}>
         <p>People love to buy.</p>
         <h2>But they hate feeling advertised to.</h2>
       </div>
     </Slide>,
 
-    <Slide number={5} key="price-list" eyebrow="What customers see">
+    <Slide number={6} key="price-list" eyebrow="What customers see">
       <div className={styles.statusBoard}>
         <span>Available.</span>
         <span>₦20,000.</span>
@@ -89,14 +109,14 @@ export function SlidesDeck() {
       <p className={styles.caption}>Your Status has become a digital price list.</p>
     </Slide>,
 
-    <Slide number={6} key="attention" className={styles.greenSlide} eyebrow="01 · Attention">
+    <Slide number={7} key="attention" className={styles.greenSlide} eyebrow="01 · Attention">
       <div className={styles.numberStatement}>
         <span>01</span>
         <h2>Earn attention before you ask for money.</h2>
       </div>
     </Slide>,
 
-    <Slide number={7} key="contacts-attention">
+    <Slide number={8} key="contacts-attention">
       <div className={styles.equation}>
         <strong>Contacts</strong>
         <span>≠</span>
@@ -105,7 +125,7 @@ export function SlidesDeck() {
       <p className={styles.caption}>Having their number does not mean you have their interest.</p>
     </Slide>,
 
-    <Slide number={8} key="curiosity-comparison" eyebrow="Demand attention vs earn it">
+    <Slide number={9} key="curiosity-comparison" eyebrow="Demand attention vs earn it">
       <div className={styles.comparison}>
         <div className={styles.badExample}>
           <span>Ignored</span>
@@ -118,7 +138,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={9} key="fewer-posts" className={styles.inkSlide}>
+    <Slide number={10} key="fewer-posts" className={styles.inkSlide}>
       <div className={styles.centerStatement}>
         <Target size={64} strokeWidth={1.5} aria-hidden="true" />
         <h2>Fewer posts.<br />More intention.</h2>
@@ -126,14 +146,14 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={10} key="customer-intent" className={styles.greenSlide} eyebrow="02 · Content">
+    <Slide number={11} key="customer-intent" className={styles.greenSlide} eyebrow="02 · Content">
       <div className={styles.numberStatement}>
         <span>02</span>
         <h2>Enter the conversation already in your customer&apos;s head.</h2>
       </div>
     </Slide>,
 
-    <Slide number={11} key="clothing-example" eyebrow="Customer-intent content">
+    <Slide number={12} key="clothing-example" eyebrow="Customer-intent content">
       <div className={styles.comparison}>
         <div className={styles.badExample}>
           <span>About your stock</span>
@@ -146,7 +166,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={12} key="customer-question" className={styles.softSlide}>
+    <Slide number={13} key="customer-question" className={styles.softSlide}>
       <div className={styles.questionSlide}>
         <Lightbulb size={60} strokeWidth={1.5} aria-hidden="true" />
         <p>Stop asking:</p>
@@ -155,14 +175,14 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={13} key="trust" className={styles.inkSlide} eyebrow="03 · Trust">
+    <Slide number={14} key="trust" className={styles.inkSlide} eyebrow="03 · Trust">
       <div className={styles.numberStatement}>
         <span>03</span>
         <h2>Give people enough evidence to trust you.</h2>
       </div>
     </Slide>,
 
-    <Slide number={14} key="trust-stack" eyebrow="Trust is built before payment">
+    <Slide number={15} key="trust-stack" eyebrow="Trust is built before payment">
       <div className={styles.iconList}>
         <div><UserRoundCheck aria-hidden="true" /><span>Clear profile</span></div>
         <div><BadgeCheck aria-hidden="true" /><span>Genuine proof</span></div>
@@ -171,47 +191,73 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={15} key="professional-language" className={styles.softSlide} eyebrow="Small words change trust">
+    <Slide number={16} key="professional-language" className={styles.softSlide} eyebrow="Small words change trust">
       <div className={styles.phraseSwap}>
         <div><s>“Wait, I am coming.”</s><strong>“Let me confirm that for you.”</strong></div>
         <div><s>“We don&apos;t have it.”</s><strong>“I can recommend a similar option.”</strong></div>
       </div>
     </Slide>,
 
-    <Slide number={16} key="nita-proof" eyebrow="A real WhatsApp business result">
-      <div className={styles.testimonialCard}>
-        <blockquote>
-          “With the help I received, Nita Watches has made over ₦2 million in
-          jewellery sales through WhatsApp—even without a physical store.”
-        </blockquote>
-        <div className={styles.testimonialFooter}>
-          <Image
-            src="/testimonials/benita-nita-watches.png"
-            alt="Benita, founder of Nita Watches"
-            width={96}
-            height={96}
-            priority
-          />
-          <p>
-            <strong>Benita</strong>
-            <span>Founder, Nita Watches · Port Harcourt</span>
-          </p>
-          <p className={styles.slideResult}>
-            <strong>₦2M+</strong>
-            <span>WhatsApp jewellery sales</span>
-          </p>
+    <Slide number={17} key="customer-proof" eyebrow="Two businesses · Real WhatsApp results">
+      <div className={styles.testimonialPair}>
+        <div className={styles.testimonialCard}>
+          <blockquote>
+            “With the help I received, Nita Watches has made over ₦2 million
+            in jewellery sales through WhatsApp—even without a physical store.”
+          </blockquote>
+          <div className={styles.testimonialFooter}>
+            <Image
+              src="/testimonials/benita-nita-watches.png"
+              alt="Benita, founder of Nita Watches"
+              width={96}
+              height={96}
+              priority
+            />
+            <p>
+              <strong>Benita</strong>
+              <span>Nita Watches · Port Harcourt</span>
+            </p>
+            <p className={styles.slideResult}>
+              <strong>₦2M+</strong>
+              <span>WhatsApp sales</span>
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.testimonialCard}>
+          <blockquote>
+            “Since I started using this WhatsApp system for my cooked-food
+            business, I now get about 50 orders every week.”
+          </blockquote>
+          <div className={styles.testimonialFooter}>
+            <Image
+              src="/testimonials/olayemi-food-business.png"
+              alt="Olayemi, orthopaedic nurse and cooked-food business owner"
+              width={96}
+              height={96}
+              priority
+            />
+            <p>
+              <strong>Olayemi</strong>
+              <span>Food business · Ondo State</span>
+            </p>
+            <p className={styles.slideResult}>
+              <strong>50 orders</strong>
+              <span>Every week</span>
+            </p>
+          </div>
         </div>
       </div>
     </Slide>,
 
-    <Slide number={17} key="sell-change" className={styles.greenSlide} eyebrow="04 · Desire">
+    <Slide number={18} key="sell-change" className={styles.greenSlide} eyebrow="04 · Desire">
       <div className={styles.numberStatement}>
         <span>04</span>
         <h2>Sell the change.<br />Not only the product.</h2>
       </div>
     </Slide>,
 
-    <Slide number={18} key="transformation">
+    <Slide number={19} key="transformation">
       <div className={styles.transformationFlow}>
         <div><span>Now</span><strong>The current situation</strong></div>
         <ArrowRight size={54} aria-hidden="true" />
@@ -220,21 +266,21 @@ export function SlidesDeck() {
       <p className={styles.caption}>People buy the movement between the two.</p>
     </Slide>,
 
-    <Slide number={19} key="wig-example" className={styles.inkSlide} eyebrow="Same wig · Different motivation">
+    <Slide number={20} key="wig-example" className={styles.inkSlide} eyebrow="Same wig · Different motivation">
       <div className={styles.twoMotives}>
         <div><span>Buyer one</span><strong>“I need something affordable.”</strong></div>
         <div><span>Buyer two</span><strong>“I want to feel confident at Saturday&apos;s wedding.”</strong></div>
       </div>
     </Slide>,
 
-    <Slide number={20} key="follow-up" className={styles.greenSlide} eyebrow="05 · Follow-up">
+    <Slide number={21} key="follow-up" className={styles.greenSlide} eyebrow="05 · Follow-up">
       <div className={styles.numberStatement}>
         <span>05</span>
         <h2>Stop losing people after they show interest.</h2>
       </div>
     </Slide>,
 
-    <Slide number={21} key="price-silence">
+    <Slide number={22} key="price-silence">
       <div className={styles.messageFlow}>
         <div>“How much?”</div>
         <ArrowRight aria-hidden="true" />
@@ -244,7 +290,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={22} key="silence-reasons" className={styles.softSlide} eyebrow="Silence is not always rejection">
+    <Slide number={23} key="silence-reasons" className={styles.softSlide} eyebrow="Silence is not always rejection">
       <div className={styles.reasonCloud}>
         <span>Comparing options</span>
         <span>Still unsure</span>
@@ -254,7 +300,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={23} key="followup-value" className={styles.inkSlide}>
+    <Slide number={24} key="followup-value" className={styles.inkSlide}>
       <div className={styles.followupContrast}>
         <div><s>“Hello ma.”<br />“Are you there ma?”</s></div>
         <div><strong>Useful information.<br />Relevant proof.<br />An answered objection.</strong></div>
@@ -262,7 +308,7 @@ export function SlidesDeck() {
       <p className={styles.caption}>Give them a reason to reopen the conversation.</p>
     </Slide>,
 
-    <Slide number={24} key="information-implementation">
+    <Slide number={25} key="information-implementation">
       <div className={styles.equation}>
         <strong>Information</strong>
         <ArrowRight size={50} aria-hidden="true" />
@@ -271,7 +317,7 @@ export function SlidesDeck() {
       <p className={styles.caption}>Knowing is not the same as knowing what to do next.</p>
     </Slide>,
 
-    <Slide number={25} key="tomorrow-questions" className={styles.softSlide} eyebrow="Tomorrow morning">
+    <Slide number={26} key="tomorrow-questions" className={styles.softSlide} eyebrow="Tomorrow morning">
       <div className={styles.questionGrid}>
         <p>What should I post first?</p>
         <p>What comes next?</p>
@@ -280,7 +326,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={26} key="introducing" className={styles.greenSlide} eyebrow="Introducing">
+    <Slide number={27} key="introducing" className={styles.greenSlide} eyebrow="Introducing">
       <div className={styles.productReveal}>
         <MessageCircle size={68} strokeWidth={1.4} aria-hidden="true" />
         <h1>WhatsApp<br />Views-to-Sales</h1>
@@ -288,7 +334,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={27} key="diagnose-first" eyebrow="Fix the right problem">
+    <Slide number={28} key="diagnose-first" eyebrow="Fix the right problem">
       <div className={styles.diagnosticChain}>
         {[
           "Audience",
@@ -303,7 +349,7 @@ export function SlidesDeck() {
       <div className={styles.searchBadge}><Search aria-hidden="true" /> Diagnose first. Then act.</div>
     </Slide>,
 
-    <Slide number={28} key="inside-one" className={styles.inkSlide} eyebrow="Inside the system · 1 of 2">
+    <Slide number={29} key="inside-one" className={styles.inkSlide} eyebrow="Inside the system · 1 of 2">
       <div className={styles.deliverableList}>
         <p><Check aria-hidden="true" /><span><strong>Status Attention System</strong>Earn the next tap.</span></p>
         <p><Check aria-hidden="true" /><span><strong>What-To-Post Sales Map</strong>Build trust and desire.</span></p>
@@ -311,7 +357,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={29} key="inside-two" className={styles.inkSlide} eyebrow="Inside the system · 2 of 2">
+    <Slide number={30} key="inside-two" className={styles.inkSlide} eyebrow="Inside the system · 2 of 2">
       <div className={styles.deliverableList}>
         <p><Check aria-hidden="true" /><span><strong>Closing & Follow-Up Process</strong>Keep interest moving.</span></p>
         <p><Check aria-hidden="true" /><span><strong>Sales Diagnostic & Checklist</strong>Know what to fix first.</span></p>
@@ -319,7 +365,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={30} key="first-twenty" className={styles.offerSlide} eyebrow="Limited launch bonus">
+    <Slide number={31} key="first-twenty" className={styles.offerSlide} eyebrow="Limited launch bonus">
       <div className={styles.bonusHero}>
         <span>First 20 buyers</span>
         <h2>Get a free social-sales audit.</h2>
@@ -327,7 +373,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={31} key="audit-channels" eyebrow="One business · Reviewed across every active channel">
+    <Slide number={32} key="audit-channels" eyebrow="One business · Reviewed across every active channel">
       <div className={styles.channelRow}>
         <div><MessageCircle aria-hidden="true" /><span>WhatsApp</span></div>
         <div><Instagram aria-hidden="true" /><span>Instagram</span></div>
@@ -337,14 +383,14 @@ export function SlidesDeck() {
       <p className={styles.caption}>See what is costing you attention, trust and sales.</p>
     </Slide>,
 
-    <Slide number={32} key="nothing-changes" className={styles.softSlide} eyebrow="A fair question">
+    <Slide number={33} key="nothing-changes" className={styles.softSlide} eyebrow="A fair question">
       <div className={styles.supportSlide}>
         <h2>“What if I apply everything and still don&apos;t make a sale?”</h2>
         <p>Message us. We will help you identify where the process is stuck.</p>
       </div>
     </Slide>,
 
-    <Slide number={33} key="proof-before-offer" eyebrow="Proof before the offer">
+    <Slide number={34} key="proof-before-offer" eyebrow="Proof before the offer">
       <div className={styles.resultProofCard}>
         <div>
           <span>Customer result</span>
@@ -366,7 +412,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={34} key="core-value" eyebrow="What the complete system includes">
+    <Slide number={35} key="core-value" eyebrow="What the complete system includes">
       <div className={styles.valueStack}>
         <div><span>Status Attention System</span><strong>₦15,000</strong></div>
         <div><span>What-To-Post Sales Map</span><strong>₦20,000</strong></div>
@@ -381,7 +427,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={35} key="total-value" className={styles.offerSlide} eyebrow="First 20 buyers receive the complete value stack">
+    <Slide number={36} key="total-value" className={styles.offerSlide} eyebrow="First 20 buyers receive the complete value stack">
       <div className={styles.valueEquation}>
         <div><span>Complete core system</span><strong>₦95,000</strong></div>
         <b aria-hidden="true">+</b>
@@ -391,7 +437,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={36} key="price" className={styles.inkSlide} eyebrow="Complete access today">
+    <Slide number={37} key="price" className={styles.inkSlide} eyebrow="Complete access today">
       <div className={styles.priceSlide}>
         <CircleDollarSign size={58} strokeWidth={1.4} aria-hidden="true" />
         <s>Up to ₦125,000 in total value</s>
@@ -401,7 +447,7 @@ export function SlidesDeck() {
       </div>
     </Slide>,
 
-    <Slide number={37} key="cta" className={styles.greenSlide} eyebrow="Your next step">
+    <Slide number={38} key="cta" className={styles.greenSlide} eyebrow="Your next step">
       <div className={styles.finalCta}>
         <Sparkles size={58} strokeWidth={1.5} aria-hidden="true" />
         <h1>Stop guessing.<br />Start implementing.</h1>

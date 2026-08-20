@@ -21,6 +21,10 @@ const rawOriginalValue = clean(
   process.env.NEXT_PUBLIC_WHATSAPP_PRODUCT_ORIGINAL_VALUE,
 );
 
+// Update this one number whenever another verified buyer claims the audit.
+const auditSlotLimit = 20;
+const auditSlotsClaimed = 14;
+
 export const offerConfig = {
   productName:
     clean(process.env.NEXT_PUBLIC_WHATSAPP_PRODUCT_NAME) ||
@@ -36,5 +40,7 @@ export const offerConfig = {
   implementationUrl: clean(
     process.env.NEXT_PUBLIC_WHATSAPP_IMPLEMENTATION_URL,
   ),
+  auditSlotLimit,
+  auditSlotsClaimed: Math.min(Math.max(auditSlotsClaimed, 0), auditSlotLimit),
   hasConfiguredPrice: true,
 };

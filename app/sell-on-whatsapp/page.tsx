@@ -107,6 +107,11 @@ const faqs = [
       "The audit is reserved for the first 20 verified buyers. If your purchase is within those first 20, we will contact you with instructions for submitting one business and its active selling pages. Once all 20 places have been claimed, this bonus closes.",
   },
   {
+    question: "What if I miss the first 20 or want the audit but don't qualify?",
+    answer:
+      "You can still message us for a paid audit of your social-selling presence. It follows the same review process as the free bonus — your WhatsApp Status, active Instagram/TikTok/Facebook pages, and a prioritized action report — just as a separate paid service outside the ₦10,000 product price.",
+  },
+  {
     question: "What does direct personal access mean?",
     answer:
       "After purchase, you will receive a direct contact channel for asking questions about applying the lessons to your business. It gives you guidance when you get stuck; it does not include unlimited done-for-you content, page management or full implementation.",
@@ -117,6 +122,31 @@ const faqs = [
       "No. You can watch the free lesson, read the sales letter or go directly to the offer. Nothing is locked.",
   },
 ];
+
+function AuditSlotMessage() {
+  const { auditSlotLimit, auditSlotsClaimed } = offerConfig;
+
+  if (auditSlotsClaimed >= auditSlotLimit) {
+    return (
+      <>
+        The free-audit bonus is closed. Message{" "}
+        <a href="mailto:info@copiwrite.com?subject=Paid%20Social-Selling%20Audit">
+          info@copiwrite.com
+        </a>{" "}
+        for a paid audit quote — same review scope, separate paid service.
+      </>
+    );
+  }
+
+  return (
+    <>
+      <strong className={styles.auditSlotCount}>
+        {auditSlotsClaimed} of {auditSlotLimit}
+      </strong>{" "}
+      free-audit slots claimed
+    </>
+  );
+}
 
 export default function SellOnWhatsAppPage() {
   const { productName, price, originalValue, videoUrl, checkoutUrl } =
@@ -159,7 +189,7 @@ export default function SellOnWhatsAppPage() {
           <div>
             <strong>{price} · One-time payment</strong>
             <p className={styles.launchTeaser}>
-              Be the first 20 and we will help you review all your social media page for FREE
+              <AuditSlotMessage />
             </p>
           </div>
           <a href={checkoutUrl}>
@@ -210,6 +240,28 @@ export default function SellOnWhatsAppPage() {
             objections or close a sale.
           </p>
         </article>
+      </section>
+
+      <section className={styles.founderAuthoritySection} id="founder-proof" aria-labelledby="founder-authority-heading">
+        <aside className={styles.founderAuthority}>
+          <Image
+            className={styles.founderLogo}
+            src="/brands/mantajobs.png"
+            alt="Mantajobs"
+            width={1200}
+            height={1140}
+            sizes="112px"
+          />
+          <div>
+            <p className={styles.founderLabel}>Used in the Mantajobs business</p>
+            <h2 id="founder-authority-heading">I Use This System In Mantajobs.</h2>
+            <p className={styles.founderMessage}>
+              These same WhatsApp principles helped me land consulting and
+              partnership projects worth up to ₦10 million through WhatsApp Status.
+            </p>
+            <p className={styles.founderName}>Seyi, Founder — Copiwrite &amp; Mantajobs.</p>
+          </div>
+        </aside>
       </section>
 
       <section className={styles.changesSection}>
@@ -308,8 +360,9 @@ export default function SellOnWhatsAppPage() {
         </article>
       </section>
 
-      <section className={styles.proofSection}>
-        <figure className={`${styles.letter} ${styles.proofBlock}`}>
+      <section className={styles.proofSection} id="customer-results">
+        <div className={styles.proofList}>
+          <figure className={`${styles.letter} ${styles.proofBlock}`}>
           <p className={styles.chapter}>A real WhatsApp business result</p>
           <blockquote>
             “With the help I received, Nita Watches has made over ₦2 million
@@ -334,7 +387,34 @@ export default function SellOnWhatsAppPage() {
               <span>WhatsApp jewellery sales · No physical store</span>
             </p>
           </figcaption>
-        </figure>
+          </figure>
+
+          <figure className={`${styles.letter} ${styles.proofBlock}`}>
+            <p className={styles.chapter}>Another business using the system</p>
+            <blockquote>
+              “Since I started using this WhatsApp system for my cooked-food
+              business, I now get about 50 orders every week.”
+            </blockquote>
+            <figcaption className={styles.proofFooter}>
+              <Image
+                className={styles.proofAvatar}
+                src="/testimonials/olayemi-food-business.png"
+                alt="Olayemi, orthopaedic nurse and cooked-food business owner in Ondo State"
+                width={72}
+                height={72}
+                sizes="72px"
+              />
+              <p className={styles.proofAttribution}>
+                <strong>Olayemi</strong>
+                <span>Orthopaedic nurse &amp; cooked-food business owner · Ondo State</span>
+              </p>
+              <p className={styles.proofResult}>
+                <strong>50 orders</strong>
+                <span>Every week</span>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className={styles.offerSection} id="offer">
@@ -374,8 +454,9 @@ export default function SellOnWhatsAppPage() {
 
           <div className={styles.bonusStack}>
             <p className={styles.bonusBadge}>
-              Limited launch bonus · First 20 verified buyers only
+              Limited launch bonus
             </p>
+            <p className={styles.bonusAvailability}><AuditSlotMessage /></p>
             <h3>We Will Review Your Social-Selling Presence For Free.</h3>
             <p className={styles.bonusLead}>
               You will not be left wondering whether you applied the system
@@ -465,7 +546,7 @@ export default function SellOnWhatsAppPage() {
               <ArrowRight size={19} aria-hidden="true" />
             </a>
             <p className={styles.auditReminder}>
-              Be the first 20 and we will help you review all your social media page for FREE
+              <AuditSlotMessage />
             </p>
             <p className={styles.priceReassurance}>One clear system. One payment. Direct personal access is included. Done-for-you implementation is available as a separate paid service.</p>
           </div>
@@ -525,9 +606,7 @@ export default function SellOnWhatsAppPage() {
             while you put it to work.
           </p>
           <p className={styles.finalBonus}>
-            <strong>
-              For the first 20 people we will review all your social media for FREE
-            </strong>
+            <AuditSlotMessage />
           </p>
           <p className={styles.finalPrice}>{productName} · {price}</p>
           <a className={styles.buyButton} href={checkoutUrl}>

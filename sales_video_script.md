@@ -14,6 +14,14 @@ Because the problem may not be that people do not want what you sell. You may si
 
 In the next few minutes, I will show you five parts of that chain you can start correcting. And at the end, if you want help putting everything together for your own business, I will show you the complete step-by-step system I created for that.
 
+## [NEW FOUNDER PROOF — PLACE THIS NEAR THE START]
+
+I use this same system in my other business, Mantajobs.
+
+It has helped me land consulting and partnership projects worth up to ₦10 million. The talks started on WhatsApp Status.
+
+**On-screen: Mantajobs logo · Seyi, Founder — Copiwrite & Mantajobs**
+
 Here is the first thing you need to understand:
 
 **People love to buy. But people hate feeling advertised to.**
@@ -110,13 +118,29 @@ Instead of “We don't have it,” say, “That option is sold out, but I can re
 
 You are not pretending. You are reducing uncertainty and communicating like a professional.
 
-I have seen what can happen when a business treats WhatsApp as a real selling system.
+## [TESTIMONIAL 1 — BENITA / NITA WATCHES]
+
+Here is one real result.
 
 Benita, the founder of Nita Watches in Port Harcourt, says:
 
 > “With the help I received, Nita Watches has made over ₦2 million in jewellery sales through WhatsApp—even without a physical store.”
 
-That is not a promise that every business will make the same amount. It is evidence that WhatsApp can become a serious sales channel when the business, offer and process work together.
+Nita Watches made more than ₦2 million in jewellery sales on WhatsApp. She did it without a physical store.
+
+## [TESTIMONIAL 2 — OLAYEMI / COOKED-FOOD BUSINESS]
+
+Here is another result from a very different business.
+
+Olayemi is an orthopaedic nurse in Ondo State. She also runs a cooked-food business.
+
+She says:
+
+> “Since I started using this WhatsApp system for my cooked-food business, I now get about 50 orders every week.”
+
+One sells jewellery. One sells cooked food. Both use WhatsApp to reach buyers and make sales.
+
+These results do not mean every business will get the same numbers. They show that WhatsApp can be a strong sales tool when your offer and sales steps work well.
 
 ## 4. Sell The Change, Not Only The Product
 
@@ -254,9 +278,13 @@ And if you want us to personally implement the complete system for your business
 
 Before I tell you what you will pay, look at what is included.
 
-And remember the result you saw from Benita of Nita Watches: more than ₦2 million in jewellery sales through WhatsApp without a physical store.
+And remember the two results you saw.
 
-Her result did not come from treating WhatsApp like a place to dump product pictures and prices. It came from using WhatsApp as a real sales channel—with the right attention, trust, offer and follow-up working together.
+Benita made more than ₦2 million in jewellery sales through WhatsApp without a physical store.
+
+Olayemi now gets about 50 cooked-food orders each week after using the system.
+
+Their results did not come from dumping product pictures and prices on WhatsApp. They used it as a real sales tool. Attention, trust, the offer and follow-up had to work together.
 
 That is the kind of process this system helps you understand and implement in your own business. Your result will depend on your market, offer and execution, but you will no longer be left guessing about the process.
 

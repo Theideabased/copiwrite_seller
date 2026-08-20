@@ -194,6 +194,45 @@
   font-size: clamp(3rem, 7vw, 7.6rem);
 }
 
+.founderAuthoritySlide {
+  max-width: 94%;
+  display: grid;
+  grid-template-columns: 0.28fr 1fr;
+  align-items: center;
+  gap: 5%;
+}
+
+.founderAuthoritySlide > img {
+  width: 100%;
+  height: auto;
+}
+
+.founderAuthoritySlide h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5.7vw, 6.2rem);
+}
+
+.founderAuthoritySlide p {
+  max-width: 92%;
+  margin: 1.5rem 0 0;
+  color: oklch(0.96 0.015 148);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.15rem, 2.25vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.founderAuthoritySlide span {
+  display: block;
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid oklch(1 0 0 / 0.24);
+  color: oklch(0.92 0.025 148);
+  font-size: clamp(0.65rem, 0.95vw, 1rem);
+  font-weight: 900;
+}
+
 .statusBoard {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -381,6 +420,44 @@
   padding: 4.5%;
   border: 1px solid var(--deck-line);
   background: white;
+}
+
+.testimonialPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5%;
+}
+
+.testimonialPair .testimonialCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonialPair .testimonialCard blockquote {
+  max-width: 100%;
+  font-size: clamp(1.35rem, 2.35vw, 2.55rem);
+  line-height: 1.16;
+}
+
+.testimonialPair .testimonialFooter {
+  grid-template-columns: auto 1fr;
+}
+
+.testimonialPair .testimonialFooter .slideResult {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--deck-line);
+  border-left: 0;
+  text-align: left;
+}
+
+.testimonialPair .testimonialFooter .slideResult strong {
+  font-size: clamp(1.6rem, 2.5vw, 2.7rem);
 }
 
 .testimonialCard blockquote {
