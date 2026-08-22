@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://copiwrite.com";
@@ -40,13 +41,54 @@ const themeScript = `
   } catch (_) {}
 `;
 
+const clarityScript = `
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "y6jcbhaask");
+`;
+
+const googleAnalyticsScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F5XQTR7K4J');
+`;
+
+const tawkConfigScript = `
+  window.Tawk_API = window.Tawk_API || {};
+  window.Tawk_LoadStart = new Date();
+`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {clarityScript}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F5XQTR7K4J"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {googleAnalyticsScript}
+        </Script>
+        <Script id="tawk-config" strategy="afterInteractive">
+          {tawkConfigScript}
+        </Script>
+        <Script
+          id="tawk-chat-widget"
+          src="https://embed.tawk.to/6a8a0faadf6d0434484b9c8e/1k0lkqd19"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+      </body>
     </html>
   );
 }
