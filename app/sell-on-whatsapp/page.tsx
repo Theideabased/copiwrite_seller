@@ -170,8 +170,8 @@ export default function SellOnWhatsAppPage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>For business owners who sell on WhatsApp</p>
           <h1>
-            You post on your WhatsApp Status. Maybe you get views, maybe you don't.
-            <span>But either way nobody's buying.</span>
+            You post on your WhatsApp Status. Maybe you get views, maybe you don&apos;t.
+            <span>But either way nobody&apos;s buying.</span>
           </h1>
           <p className={styles.heroLead}>Then watch this video to the end.</p>
         </div>
