@@ -820,71 +820,14 @@
 }
 
 .resourceBonuses {
+  padding: 0;
   background: var(--letter-ink);
-  color: white;
-}
-
-.resourceBonusIntro {
-  max-width: 42rem;
-  margin: 0 auto 2rem;
-  text-align: center;
-}
-
-.resourceBonusIntro .chapter {
-  color: oklch(0.8 0.1 148);
-}
-
-.resourceBonusIntro h3 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-}
-
-.resourceBonusIntro > p:last-child {
-  margin: 1rem 0 0;
-  color: oklch(0.88 0.015 148);
-  line-height: 1.65;
 }
 
 .bonusMockup {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid oklch(1 0 0 / 0.14);
-}
-
-.resourceBonusList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin: 1px 0 0;
-  padding: 0;
-  background: oklch(1 0 0 / 0.16);
-  list-style: none;
-}
-
-.resourceBonusList li {
-  min-height: 6.5rem;
-  display: grid;
-  align-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--letter-ink);
-}
-
-.resourceBonusList span {
-  color: oklch(0.8 0.1 148);
-  font-size: 0.7rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-
-.resourceBonusList strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  line-height: 1.35;
 }
 
 .bonusStack {
@@ -1330,8 +1273,7 @@
 
   .salesChain,
   .fitSection,
-  .bonusGrid,
-  .resourceBonusList {
+  .bonusGrid {
     grid-template-columns: 1fr;
   }
 

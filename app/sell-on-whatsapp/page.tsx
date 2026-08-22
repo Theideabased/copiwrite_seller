@@ -70,12 +70,6 @@ const auditAreas = [
   "Your biggest sales gaps, ranked by priority",
 ];
 
-const additionalBonuses = [
-  "Facebook and Instagram Ads Guide",
-  "TikTok Ads Guide",
-  "Social Media Profile Optimization",
-];
-
 const discoveryBullets = [
   "How to earn attention from your first WhatsApp status without begging for views, dancing on camera or posting all day.",
   "The status-posting mistake that trains good customers to tap past your business before they even see the offer.",
@@ -459,15 +453,6 @@ export default function SellOnWhatsAppPage() {
           </div>
 
           <div className={styles.resourceBonuses}>
-            <div className={styles.resourceBonusIntro}>
-              <p className={styles.chapter}>Included with every purchase</p>
-              <h3>You Also Get These 3 Bonuses.</h3>
-              <p>
-                Use the main WhatsApp sales guide to improve how you sell, then
-                use these bonuses to reach more people and prepare your social
-                profiles for buyers.
-              </p>
-            </div>
             <Image
               className={styles.bonusMockup}
               src="/products/whatsapp-guide-bonus-bundle.png"
@@ -476,14 +461,6 @@ export default function SellOnWhatsAppPage() {
               height={1024}
               sizes="(max-width: 640px) calc(100vw - 3rem), 56rem"
             />
-            <ol className={styles.resourceBonusList}>
-              {additionalBonuses.map((bonus, index) => (
-                <li key={bonus}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{bonus}</strong>
-                </li>
-              ))}
-            </ol>
           </div>
 
           <div className={styles.bonusStack}>
