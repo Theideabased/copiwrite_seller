@@ -2,6 +2,7 @@
 
 import { ArrowRight, LoaderCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { trackMetaPixelEvent } from "@/lib/meta-pixel";
 import styles from "./page.module.css";
 
 type FieldErrors = Partial<Record<"name" | "email" | "phone", string>>;
@@ -37,10 +38,18 @@ export function CheckoutForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      const result = (await response.json()) as { authorizationUrl?: string; message?: string };
+      const result = (await response.json()) as {
+        authorizationUrl?: string;
+        reference?: string;
+        message?: string;
+      };
       if (!response.ok || !result.authorizationUrl) {
         throw new Error(result.message || "Payment could not be started.");
       }
+      trackMetaPixelEvent(
+        "InitiateCheckout",
+        `initiate_checkout_${result.reference || Date.now()}`,
+      );
       window.location.assign(result.authorizationUrl);
     } catch (error) {
       setServerMessage(error instanceof Error ? error.message : "Payment could not be started.");

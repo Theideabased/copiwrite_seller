@@ -19,7 +19,7 @@ const services = [
   {
     number: "01",
     title: "Message strategy",
-    description: "Find the sharpest version of your offer—who it is for, why it matters, and the language your whole team can use.",
+    description: "Find the sharpest version of your offer: who it is for, why it matters, and the language your whole team can use.",
     deliverables: ["Audience and category research", "Positioning and value proposition", "Messaging and voice system"],
   },
   {
@@ -134,7 +134,7 @@ export default function Home() {
             <h2>Your offer may be strong. Its message is doing too much work.</h2>
             <div className="problem-columns">
               <p>When buyers cannot quickly see the value, they hesitate. Marketing adds more words. Sales tells a different story. The website becomes a catalogue instead of a decision path.</p>
-              <p>We find the idea worth remembering, then build the pages, campaigns, and sales content around it—so every touchpoint moves in the same direction.</p>
+              <p>We find the idea worth remembering, then build the pages, campaigns, and sales content around it, so every touchpoint moves in the same direction.</p>
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function Home() {
             <div className="section-kicker"><span>05</span><p>Why Copiwrite</p></div>
             <h2>More judgment. Less content for content’s sake.</h2>
             <p>AI made producing words cheap. It did not make choosing the right promise, finding credible proof, or aligning a team any easier.</p>
-            <p>Copiwrite combines research, commercial thinking, and hands-on execution. The goal is not to fill a calendar. It is to make the value easier to understand—and easier to buy.</p>
+            <p>Copiwrite combines research, commercial thinking, and hands-on execution. The goal is not to fill a calendar. It is to make the value easier to understand and easier to buy.</p>
             <div className="about-principles"><span>Evidence over adjectives</span><span>One idea at a time</span><span>Sales and marketing aligned</span></div>
           </div>
         </div>

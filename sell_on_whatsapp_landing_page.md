@@ -58,7 +58,7 @@ Pre-headline:
 
 Main headline:
 
-"Do You Post On Your WhatsApp Status And You Have Low Views — Or You Even Have Views And Nobody Is Buying?"
+"Do You Post On Your WhatsApp Status And You Have Low Views, Or You Even Have Views And Nobody Is Buying?"
 
 Subheadline:
 
@@ -375,7 +375,7 @@ If no URL is configured, hide the button.
 
 Do NOT immediately show:
 
-"Get Access — ₦[PRICE]"
+"Get Access: ₦[PRICE]"
 
 when the visitor first lands.
 
@@ -387,7 +387,7 @@ and scroll to the product section.
 
 Once the visitor has reached the first main pricing section, change the sticky CTA to:
 
-"Get Access — ₦[PRICE]"
+"Get Access: ₦[PRICE]"
 
 Clicking it should go directly to CHECKOUT_URL.
 
@@ -465,7 +465,7 @@ The final page order should be:
 2. Main sales video
 3. "People love to buy..." insight
 4. Five free insights
-5. Diagnostic — "Where is your WhatsApp actually broken?"
+5. Diagnostic: "Where is your WhatsApp actually broken?"
 6. WhatsApp sales framework
 7. Information vs Implementation
 8. Introduce [PRODUCT_NAME]

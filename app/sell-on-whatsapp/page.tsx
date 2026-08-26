@@ -109,7 +109,7 @@ const faqs = [
   {
     question: "What if I miss the first 20 or want the audit but don't qualify?",
     answer:
-      "You can still message us for a paid audit of your social-selling presence. It follows the same review process as the free bonus — your WhatsApp Status, active Instagram/TikTok/Facebook pages, and a prioritized action report — just as a separate paid service outside the ₦10,000 product price.",
+      "You can still message us for a paid audit of your social-selling presence. It follows the same review process as the free bonus: your WhatsApp Status, active Instagram/TikTok/Facebook pages, and a prioritized action report. This is a separate paid service outside the ₦10,000 product price.",
   },
   {
     question: "What does direct personal access mean?",
@@ -133,7 +133,7 @@ function AuditSlotMessage() {
         <a href="mailto:info@copiwrite.com?subject=Paid%20Social-Selling%20Audit">
           info@copiwrite.com
         </a>{" "}
-        for a paid audit quote — same review scope, separate paid service.
+        for a paid audit quote. The review scope is the same, but it is a separate paid service.
       </>
     );
   }
@@ -259,7 +259,7 @@ export default function SellOnWhatsAppPage() {
               These same WhatsApp principles helped me land consulting and
               partnership projects worth up to ₦10 million through WhatsApp Status.
             </p>
-            <p className={styles.founderName}>Seyi, Founder — Copiwrite &amp; Mantajobs.</p>
+            <p className={styles.founderName}>Seyi, Founder of Copiwrite &amp; Mantajobs.</p>
           </div>
         </aside>
       </section>
@@ -290,7 +290,7 @@ export default function SellOnWhatsAppPage() {
 
           <p className={styles.pullQuote}>
             Your first job is not to post more. Your first job is to find the
-            weak link—then fix the right problem.
+            weak link. Then fix the right problem.
           </p>
         </div>
       </section>
@@ -613,7 +613,7 @@ export default function SellOnWhatsAppPage() {
           </p>
           <p>
             {productName} gives you a process you can return to whenever your
-            WhatsApp sales feel stuck—and direct access to ask for guidance
+            WhatsApp sales feel stuck. You also get direct access to ask for guidance
             while you put it to work.
           </p>
           <p className={styles.finalBonus}>

@@ -1,4 +1,4 @@
-# WhatsApp Views-to-Sales — Revised Sales Video Script
+# WhatsApp Views-to-Sales: Revised Sales Video Script
 
 Recording direction: Speak conversationally, not like you are reading an advertisement. Pause after the bold lines. Use real screenshots or examples only when you have permission to show them. Estimated length: 12–15 minutes.
 
@@ -6,7 +6,7 @@ Recording direction: Speak conversationally, not like you are reading an adverti
 
 Do you post on your WhatsApp Status and get very few views?
 
-Or people view, ask, “How much?”—and disappear?
+Or people view, ask, “How much?”, then disappear?
 
 Then watch this video to the end.
 
@@ -14,13 +14,13 @@ Because the problem may not be that people do not want what you sell. You may si
 
 In the next few minutes, I will show you five parts of that chain you can start correcting. And at the end, if you want help putting everything together for your own business, I will show you the complete step-by-step system I created for that.
 
-## [NEW FOUNDER PROOF — PLACE THIS NEAR THE START]
+## [NEW FOUNDER PROOF: PLACE THIS NEAR THE START]
 
 I use this same system in my other business, Mantajobs.
 
 It has helped me land consulting and partnership projects worth up to ₦10 million. The talks started on WhatsApp Status.
 
-**On-screen: Mantajobs logo · Seyi, Founder — Copiwrite & Mantajobs**
+**On-screen: Mantajobs logo · Seyi, Founder of Copiwrite & Mantajobs**
 
 Here is the first thing you need to understand:
 
@@ -62,7 +62,7 @@ One simple thing you can test is opening with a curiosity-based text connected t
 
 If you sell skincare, compare these two openings:
 
-“Face cream available — ₦12,500.”
+“Face cream available: ₦12,500.”
 
 And:
 
@@ -118,17 +118,17 @@ Instead of “We don't have it,” say, “That option is sold out, but I can re
 
 You are not pretending. You are reducing uncertainty and communicating like a professional.
 
-## [TESTIMONIAL 1 — BENITA / NITA WATCHES]
+## [TESTIMONIAL 1: BENITA / NITA WATCHES]
 
 Here is one real result.
 
 Benita, the founder of Nita Watches in Port Harcourt, says:
 
-> “With the help I received, Nita Watches has made over ₦2 million in jewellery sales through WhatsApp—even without a physical store.”
+> “With the help I received, Nita Watches has made over ₦2 million in jewellery sales through WhatsApp, even without a physical store.”
 
 Nita Watches made more than ₦2 million in jewellery sales on WhatsApp. She did it without a physical store.
 
-## [TESTIMONIAL 2 — OLAYEMI / COOKED-FOOD BUSINESS]
+## [TESTIMONIAL 2: OLAYEMI / COOKED-FOOD BUSINESS]
 
 Here is another result from a very different business.
 
@@ -154,7 +154,7 @@ What do they want instead?
 
 Why does that change matter now?
 
-What will it cost them—in money, time, comfort or opportunity—if they do nothing?
+What will it cost them in money, time, comfort or opportunity if they do nothing?
 
 Imagine two people asking about the same wig.
 
@@ -190,7 +190,7 @@ When will I receive it?
 
 Why should I choose this option?
 
-And if they go quiet, follow up—but give them a reason to reopen the conversation.
+And if they go quiet, follow up, but give them a reason to reopen the conversation.
 
 Share useful information. Answer an objection. Show relevant proof. Remind them of the result they told you they wanted.
 
@@ -214,7 +214,7 @@ How do I know whether my real problem is low views, weak trust or a poor offer?
 
 What do I say after somebody asks for the price?
 
-When do I follow up—and what do I send?
+When do I follow up, and what do I send?
 
 How do I join everything together without trying fifty random tips?
 
@@ -224,7 +224,7 @@ That is the difference between knowing ideas and having a system.
 
 I created **WhatsApp Views-to-Sales** to help you diagnose the weak link and implement the right fix in order.
 
-It is not “one hundred WhatsApp hacks—good luck.”
+It is not “one hundred WhatsApp hacks. Good luck.”
 
 You start with the diagnostic. You identify whether the problem is your audience, attention, views, trust, desire, conversation, closing or follow-up. Then you work through the relevant process instead of changing everything blindly.
 
@@ -290,12 +290,12 @@ That is the kind of process this system helps you understand and implement in yo
 
 If each part of this system were offered separately, here is how I would value it:
 
-- The **Status Attention System** — **₦15,000**.
-- The **What-To-Post Sales Map** — **₦20,000**.
-- The **Views-to-Conversation Method** — **₦15,000**.
-- The **Closing and Follow-Up Process** — **₦20,000**.
-- The **WhatsApp Sales Diagnostic and Implementation Checklist** — **₦10,000**.
-- Direct personal access to Copiwrite for implementation questions — **₦15,000**.
+- The **Status Attention System**: **₦15,000**.
+- The **What-To-Post Sales Map**: **₦20,000**.
+- The **Views-to-Conversation Method**: **₦15,000**.
+- The **Closing and Follow-Up Process**: **₦20,000**.
+- The **WhatsApp Sales Diagnostic and Implementation Checklist**: **₦10,000**.
+- Direct personal access to Copiwrite for implementation questions: **₦15,000**.
 
 That gives the core system a total standalone value of **₦95,000**.
 

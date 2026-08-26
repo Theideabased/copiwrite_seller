@@ -60,7 +60,7 @@ export function SlidesDeck() {
     <Slide number={2} key="views-no-sales" className={styles.inkSlide}>
       <div className={styles.centerStatement}>
         <MessageCircle size={64} strokeWidth={1.5} aria-hidden="true" />
-        <h1>Or people view, ask “How much?”—and disappear?</h1>
+        <h1>Or people view, ask “How much?”, then disappear?</h1>
       </div>
     </Slide>,
 
@@ -129,7 +129,7 @@ export function SlidesDeck() {
       <div className={styles.comparison}>
         <div className={styles.badExample}>
           <span>Ignored</span>
-          <p>“Face cream available — ₦12,500.”</p>
+          <p>“Face cream available: ₦12,500.”</p>
         </div>
         <div className={styles.goodExample}>
           <span>Keep watching</span>
@@ -203,7 +203,7 @@ export function SlidesDeck() {
         <div className={styles.testimonialCard}>
           <blockquote>
             “With the help I received, Nita Watches has made over ₦2 million
-            in jewellery sales through WhatsApp—even without a physical store.”
+            in jewellery sales through WhatsApp, even without a physical store.”
           </blockquote>
           <div className={styles.testimonialFooter}>
             <Image

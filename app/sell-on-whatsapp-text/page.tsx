@@ -317,7 +317,7 @@ export default function SellOnWhatsAppTextPage() {
               That is why I built this system for you. So you do not spend the
               next three months posting more when what you need is a better path.
             </p>
-            <strong>Seyi, Founder — Copiwrite &amp; Mantajobs</strong>
+            <strong>Seyi, Founder of Copiwrite &amp; Mantajobs</strong>
           </div>
         </div>
       </section>

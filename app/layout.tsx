@@ -7,7 +7,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://copiwrite.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Copiwrite — Marketing that makes the value clear",
+    default: "Copiwrite: Marketing that makes the value clear",
     template: "%s | Copiwrite",
   },
   description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Copiwrite — Marketing that makes the value clear",
+    title: "Copiwrite: Marketing that makes the value clear",
     description: "Strategy, copy, campaigns, and sales content for ambitious teams.",
   },
 };

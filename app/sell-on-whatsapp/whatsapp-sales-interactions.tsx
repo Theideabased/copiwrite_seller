@@ -92,7 +92,7 @@ export function MobileCta({
   const href = priceReached ? checkoutUrl : "#offer";
   const label = priceReached
     ? hasConfiguredPrice
-      ? `Get access — ${price}`
+      ? `Get access: ${price}`
       : "Ask about access"
     : "See the step-by-step system";
 

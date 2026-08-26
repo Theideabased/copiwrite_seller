@@ -100,7 +100,7 @@ If I'm struggling with that, I want to see the next status.
 
 Compare that with:
 
-> "Face cream available — ₦12,500."
+> "Face cream available: ₦12,500."
 
 One is asking for attention.
 

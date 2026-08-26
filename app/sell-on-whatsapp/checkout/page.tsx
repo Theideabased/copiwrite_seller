@@ -4,7 +4,7 @@ import { CheckoutForm } from "./checkout-form";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Checkout — WhatsApp Views-to-Sales",
+  title: "Checkout | WhatsApp Views-to-Sales",
   description: "Complete your payment for WhatsApp Views-to-Sales.",
   robots: { index: false, follow: false },
 };

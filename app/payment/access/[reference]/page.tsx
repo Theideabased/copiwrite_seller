@@ -8,6 +8,7 @@ import {
   verifyPaystackTransaction,
 } from "@/lib/paystack";
 import { WHATSAPP_SUPPORT_URL, whatsappProductFiles } from "@/lib/whatsapp-product-files";
+import { PurchaseEvent } from "./purchase-event";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -41,6 +42,7 @@ export default async function BuyerAccessPage({ params, searchParams }: PageProp
 
   return (
     <main className={styles.page}>
+      <PurchaseEvent reference={reference} />
       <a className={styles.brand} href="/sell-on-whatsapp">
         <span aria-hidden="true">W</span>
         WhatsApp Views-to-Sales

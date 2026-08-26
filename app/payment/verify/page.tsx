@@ -12,7 +12,7 @@ import styles from "./page.module.css";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Payment Status — WhatsApp Views-to-Sales",
+  title: "Payment Status | WhatsApp Views-to-Sales",
   robots: { index: false, follow: false },
 };
 
