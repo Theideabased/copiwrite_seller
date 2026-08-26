@@ -254,26 +254,68 @@ export default function SellOnWhatsAppTextPage() {
             sizes="96px"
           />
           <div>
-            <p className={styles.kicker}>What I changed in three months</p>
-            <h2>I Did Not Post More. I Gave Each Post A Job.</h2>
+            <p className={styles.kicker}>My WhatsApp story</p>
+            <h2>For Three Months, I Was Fixing The Wrong Problem.</h2>
             <p>
-              I tested these steps in Mantajobs, a very different type of
-              business.
-            </p>
-
-            <div className={styles.storySteps}>
-              <p><strong>Month one:</strong> I stopped using Status like a board full of ads. I looked at where people lost care.</p>
-              <p><strong>Month two:</strong> Each post got one job. Get a tap. Build trust. Show the value. Or start a chat.</p>
-              <p><strong>Month three:</strong> I made the next step clear and gave warm leads a good reason to reply.</p>
-            </div>
-
-            <p>
-              Chats that began on WhatsApp Status helped me win consulting and
-              partnership work worth up to ₦10 million.
+              Mantajobs had real value. But on WhatsApp, a good offer can still
+              pass like noise.
             </p>
             <p>
-              I did not need to post all day. I needed each post to move the
-              right person one step.
+              I would post. People would view. Then the screen would go still.
+            </p>
+
+            <p>No chat.</p>
+
+            <p>No clear next step.</p>
+
+            <p>So I did what most people do when sales feel slow.</p>
+
+            <p>I looked for more things to post.</p>
+
+            <p>More words. More offers. More noise.</p>
+
+            <p>But each new post gave people one more thing to skip.</p>
+
+            <p>
+              And if I kept going that way, good buyers could keep passing while
+              I blamed my views, my price or my contacts.
+            </p>
+
+            <p className={styles.storyTurn}>Then I saw what I had missed.</p>
+
+            <p>
+              A person does not go from “Who is this?” to “Take my money” in one
+              post.
+            </p>
+
+            <p>They need a path.</p>
+
+            <p>That truth became my guide.</p>
+
+            <p>
+              I stopped asking one post to do all the work. One post got the
+              right eye. The next built trust. Another showed proof. Then I made
+              it easy to reply.
+            </p>
+
+            <p>
+              Status stopped being a board full of ads. It became the start of a
+              real talk.
+            </p>
+
+            <p>
+              Those talks helped Mantajobs win work worth up to ₦10 million from
+              people and firms.
+            </p>
+
+            <p>
+              Not because I posted all day. Because each post moved the right
+              person one small step.
+            </p>
+
+            <p>
+              That is why I built this system for you. So you do not spend the
+              next three months posting more when what you need is a better path.
             </p>
             <strong>Seyi, Founder — Copiwrite &amp; Mantajobs</strong>
           </div>
