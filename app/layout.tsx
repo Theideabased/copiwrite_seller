@@ -56,6 +56,19 @@ const googleAnalyticsScript = `
   gtag('config', 'G-F5XQTR7K4J');
 `;
 
+const metaPixelScript = `
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;
+    n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1862600781375107');
+  fbq('track','PageView');
+`;
+
 const tawkConfigScript = `
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
@@ -79,6 +92,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Script id="google-analytics" strategy="afterInteractive">
           {googleAnalyticsScript}
         </Script>
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {metaPixelScript}
+        </Script>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html:
+              '<img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1862600781375107&amp;ev=PageView&amp;noscript=1" />',
+          }}
+        />
         <Script id="tawk-config" strategy="afterInteractive">
           {tawkConfigScript}
         </Script>

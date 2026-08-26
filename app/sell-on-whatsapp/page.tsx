@@ -170,8 +170,8 @@ export default function SellOnWhatsAppPage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>For business owners who sell on WhatsApp</p>
           <h1>
-            You post on your WhatsApp Status. Maybe you get views, maybe you don&apos;t.
-            <span>But either way nobody&apos;s buying.</span>
+            if you are a business owner and you have low views on your status
+            <span>or you are not making sales.</span>
           </h1>
           <p className={styles.heroLead}>Then watch this video to the end.</p>
         </div>
@@ -182,7 +182,7 @@ export default function SellOnWhatsAppPage() {
 
         <p className={styles.videoNote}>
           This free lesson shows you why people may be ignoring your business
-          status—and five things you can start doing differently.
+          status and five things you can start doing differently.
         </p>
 
         <div className={styles.afterVideoOffer}>
