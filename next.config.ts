@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   outputFileTracingIncludes: {
-    "/api/downloads/whatsapp-guide": ["./whatsapp-views-to-sales-video-slides.pdf"],
+    "/api/downloads/whatsapp-guide": ["./products/*.pdf"],
   },
   headers: async () => [
     {

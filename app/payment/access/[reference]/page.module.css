@@ -92,6 +92,11 @@
   line-height: 1.7;
 }
 
+.documents {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .document {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -138,6 +143,21 @@
   color: white;
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.whatsapp {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--result-green);
+  border-radius: 0.4rem;
+  color: var(--result-green-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
 }
 
 .notes {
