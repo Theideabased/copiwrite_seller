@@ -33,7 +33,7 @@ export const offerConfig = {
   originalValue: rawOriginalValue
     ? displayNaira(rawOriginalValue)
     : "",
-  videoUrl: clean(process.env.NEXT_PUBLIC_WHATSAPP_VIDEO_URL),
+  videoUrl: "https://youtu.be/mgkzd0ADS4s",
   checkoutUrl:
     clean(process.env.NEXT_PUBLIC_WHATSAPP_CHECKOUT_URL) ||
     "/sell-on-whatsapp/checkout",

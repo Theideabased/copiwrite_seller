@@ -177,7 +177,11 @@ export default function SellOnWhatsAppPage() {
         </div>
 
         <div className={styles.videoWrap} aria-label="Free WhatsApp sales video">
-          <SalesVideo videoUrl={videoUrl} />
+          <SalesVideo
+            videoUrl={videoUrl}
+            checkoutUrl={checkoutUrl}
+            price={price}
+          />
         </div>
 
         <p className={styles.videoNote}>

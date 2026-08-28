@@ -133,6 +133,123 @@
   object-fit: contain;
 }
 
+.videoStartButton,
+.videoEndCard,
+.videoError,
+.videoPlayerShell {
+  width: 100%;
+  height: 100%;
+}
+
+.videoStartButton {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.65rem;
+  border: 0;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+}
+
+.videoStartButton strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 4vw, 2.25rem);
+}
+
+.videoStartButton > span:last-child {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.videoStartButton:focus-visible,
+.videoEndCard a:focus-visible,
+.videoEndCard button:focus-visible,
+.videoError button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: -5px;
+}
+
+.videoPlayerShell {
+  position: relative;
+}
+
+.videoLoading {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: oklch(0.16 0.01 150);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.videoEndCard,
+.videoError {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.videoEndCard,
+.videoError {
+  background: oklch(0.16 0.01 150);
+}
+
+.videoEndCard strong,
+.videoError strong {
+  max-width: 34rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 4vw, 2.15rem);
+}
+
+.videoEndCard a,
+.videoEndCard button,
+.videoError button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.videoEndCard a {
+  padding: 0.8rem 1.15rem;
+  background: var(--letter-accent);
+  color: white;
+  text-decoration: none;
+}
+
+.videoEndCard button,
+.videoError button {
+  padding: 0.65rem 1rem;
+  border: 1px solid oklch(1 0 0 / 0.55);
+  background: transparent;
+  color: white;
+}
+
+.videoError span {
+  color: oklch(0.84 0.01 150);
+}
+
 .videoPlaceholder {
   display: grid;
   place-content: center;
