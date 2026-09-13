@@ -3,6 +3,7 @@
 import { ArrowRight, LoaderCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { trackMetaPixelEvent } from "@/lib/meta-pixel";
+import { trackTikTokPixelEvent } from "@/lib/tiktok-pixel";
 import styles from "./page.module.css";
 
 type FieldErrors = Partial<Record<"name" | "email" | "phone", string>>;
@@ -16,6 +17,9 @@ export function CheckoutForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    const tiktokClickId = new URLSearchParams(window.location.search).get("ttclid") || "";
+    const tiktokCookie = document.cookie.match(/(?:^|;\s*)_ttp=([^;]+)/)?.[1] || "";
+    const checkoutData = { ...data, tiktokClickId, tiktokCookie };
     const nextErrors: FieldErrors = {};
 
     if (String(data.name || "").trim().length < 2) nextErrors.name = "Enter your name.";
@@ -36,7 +40,7 @@ export function CheckoutForm() {
       const response = await fetch("/api/payments/paystack/initialize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(checkoutData),
       });
       const result = (await response.json()) as {
         authorizationUrl?: string;
@@ -46,9 +50,14 @@ export function CheckoutForm() {
       if (!response.ok || !result.authorizationUrl) {
         throw new Error(result.message || "Payment could not be started.");
       }
+      const checkoutEventId = `initiate_checkout_${result.reference || Date.now()}`;
       trackMetaPixelEvent(
         "InitiateCheckout",
-        `initiate_checkout_${result.reference || Date.now()}`,
+        checkoutEventId,
+      );
+      trackTikTokPixelEvent(
+        "InitiateCheckout",
+        checkoutEventId,
       );
       window.location.assign(result.authorizationUrl);
     } catch (error) {

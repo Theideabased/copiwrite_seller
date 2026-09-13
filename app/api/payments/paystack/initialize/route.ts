@@ -12,6 +12,8 @@ type CheckoutPayload = {
   email?: unknown;
   phone?: unknown;
   website?: unknown;
+  tiktokClickId?: unknown;
+  tiktokCookie?: unknown;
 };
 
 const clean = (value: unknown, max: number) =>
@@ -61,6 +63,8 @@ export async function POST(request: NextRequest) {
     name: clean(payload.name, 100),
     email: clean(payload.email, 200).toLowerCase(),
     phone: clean(payload.phone, 30).replace(/[^+\d\s()-]/g, ""),
+    tiktokClickId: clean(payload.tiktokClickId, 200),
+    tiktokCookie: clean(payload.tiktokCookie, 200),
   };
 
   if (buyer.name.length < 2 || !/^\S+@\S+\.\S+$/.test(buyer.email) || buyer.phone.replace(/\D/g, "").length < 10) {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, Check, MessageCircle, Search } from "lucide-react";
+import { TikTokViewContentEvent } from "@/app/sell-on-whatsapp/tiktok-view-event";
 import { offerConfig } from "../sell-on-whatsapp/offer-config";
 import styles from "./page.module.css";
 
@@ -109,6 +110,7 @@ export default function SellOnWhatsAppTextPage() {
 
   return (
     <main className={styles.page}>
+      <TikTokViewContentEvent />
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a className={styles.brand} href="#top" aria-label="WhatsApp Views-to-Sales home">

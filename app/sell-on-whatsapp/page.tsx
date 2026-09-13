@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { whatsappProductFiles } from "@/lib/whatsapp-product-files";
 import { offerConfig } from "./offer-config";
+import { TikTokViewContentEvent } from "./tiktok-view-event";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -81,6 +82,7 @@ export default function SellOnWhatsAppPage() {
 
   return (
     <main className={`${styles.page} ${styles.concisePage}`}>
+      <TikTokViewContentEvent />
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a className={styles.productName} href="#top">

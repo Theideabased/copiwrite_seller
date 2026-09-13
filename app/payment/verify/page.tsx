@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { AlertTriangle, RefreshCw } from "lucide-react";
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import { deliverCompletedOrder } from "@/lib/order-delivery";
 import {
   createDeliveryAccessPath,
   isCompletedProductPayment,
   verifyPaystackTransaction,
 } from "@/lib/paystack";
+import { sendTikTokPurchaseEvent } from "@/lib/tiktok-events-api";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -42,9 +44,23 @@ export default async function PaymentVerificationPage({ searchParams }: PageProp
     return <PaymentState status="pending" reference={reference} />;
   }
 
-  // This product intentionally delivers through the verified callback only.
   const fallbackOrigin = process.env.PAYSTACK_CALLBACK_URL || "http://localhost:3000";
-  const delivered = await deliverCompletedOrder(verification, fallbackOrigin);
+  const requestHeaders = await headers();
+  const forwardedIp = requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const purchaseUrl = new URL(
+    `/payment/access/${encodeURIComponent(reference)}`,
+    fallbackOrigin,
+  ).toString();
+
+  // This product intentionally delivers through the verified callback only.
+  const [, delivered] = await Promise.all([
+    sendTikTokPurchaseEvent(verification, {
+      ip: forwardedIp,
+      userAgent: requestHeaders.get("user-agent") || undefined,
+      url: purchaseUrl,
+    }),
+    deliverCompletedOrder(verification, fallbackOrigin),
+  ]);
   if (!delivered) {
     console.error("Payment callback delivery was incomplete. See the email or Telegram error above.");
   }

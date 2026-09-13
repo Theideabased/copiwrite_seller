@@ -12,6 +12,8 @@ type Buyer = {
   name: string;
   email: string;
   phone: string;
+  tiktokClickId?: string;
+  tiktokCookie?: string;
 };
 
 type PaystackInitializeResponse = {
@@ -120,6 +122,8 @@ export async function initializePaystackTransaction({
         product_name: WHATSAPP_PRODUCT.name,
         buyer_name: buyer.name,
         whatsapp_number: buyer.phone,
+        tiktok_ttclid: buyer.tiktokClickId || undefined,
+        tiktok_ttp: buyer.tiktokCookie || undefined,
         cancel_action: callbackUrl.replace(/\/payment\/verify\/?$/, "/sell-on-whatsapp/checkout"),
       }),
     }),

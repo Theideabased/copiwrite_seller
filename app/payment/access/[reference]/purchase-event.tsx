@@ -2,16 +2,20 @@
 
 import { useEffect } from "react";
 import { trackMetaPixelEvent } from "@/lib/meta-pixel";
+import { trackTikTokPixelEvent } from "@/lib/tiktok-pixel";
 
 const MAX_ATTEMPTS = 20;
 const RETRY_DELAY_MS = 250;
 
 export function PurchaseEvent({ reference }: { reference: string }) {
   useEffect(() => {
-    const storageKey = `copiwrite-meta-purchase:${reference}`;
-
+    const metaStorageKey = `copiwrite-meta-purchase:${reference}`;
+    const tiktokStorageKey = `copiwrite-tiktok-purchase:${reference}`;
+    let metaTracked = false;
+    let tiktokTracked = false;
     try {
-      if (window.localStorage.getItem(storageKey)) return;
+      metaTracked = Boolean(window.localStorage.getItem(metaStorageKey));
+      tiktokTracked = Boolean(window.localStorage.getItem(tiktokStorageKey));
     } catch {
       // Tracking can still run when browser storage is blocked.
     }
@@ -21,14 +25,21 @@ export function PurchaseEvent({ reference }: { reference: string }) {
 
     const trackPurchase = () => {
       attempts += 1;
-      const tracked = trackMetaPixelEvent("Purchase", `purchase_${reference}`);
+      if (!metaTracked) metaTracked = trackMetaPixelEvent("Purchase", `purchase_${reference}`);
+      if (!tiktokTracked) {
+        tiktokTracked = trackTikTokPixelEvent("CompletePayment", `purchase_${reference}`);
+      }
 
-      if (tracked) {
+      if (metaTracked || tiktokTracked) {
         try {
-          window.localStorage.setItem(storageKey, "1");
+          if (metaTracked) window.localStorage.setItem(metaStorageKey, "1");
+          if (tiktokTracked) window.localStorage.setItem(tiktokStorageKey, "1");
         } catch {
-          // The Meta event was sent even if browser storage is blocked.
+          // Events were sent even if browser storage is blocked.
         }
+      }
+
+      if (metaTracked && tiktokTracked) {
         return;
       }
 
