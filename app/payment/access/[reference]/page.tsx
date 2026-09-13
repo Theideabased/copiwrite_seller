@@ -8,6 +8,7 @@ import {
   verifyPaystackTransaction,
 } from "@/lib/paystack";
 import { WHATSAPP_SUPPORT_URL, whatsappProductFiles } from "@/lib/whatsapp-product-files";
+import { tiktokIdentityForVerification } from "@/lib/tiktok-events-api";
 import { PurchaseEvent } from "./purchase-event";
 import styles from "./page.module.css";
 
@@ -42,7 +43,10 @@ export default async function BuyerAccessPage({ params, searchParams }: PageProp
 
   return (
     <main className={styles.page}>
-      <PurchaseEvent reference={reference} />
+      <PurchaseEvent
+        reference={reference}
+        identity={tiktokIdentityForVerification(verification)}
+      />
       <a className={styles.brand} href="/sell-on-whatsapp">
         <span aria-hidden="true">W</span>
         WhatsApp Views-to-Sales

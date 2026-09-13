@@ -2,12 +2,22 @@
 
 import { useEffect } from "react";
 import { trackMetaPixelEvent } from "@/lib/meta-pixel";
-import { trackTikTokPixelEvent } from "@/lib/tiktok-pixel";
+import {
+  identifyTikTokUser,
+  type TikTokIdentity,
+  trackTikTokPixelEvent,
+} from "@/lib/tiktok-pixel";
 
 const MAX_ATTEMPTS = 20;
 const RETRY_DELAY_MS = 250;
 
-export function PurchaseEvent({ reference }: { reference: string }) {
+export function PurchaseEvent({
+  reference,
+  identity,
+}: {
+  reference: string;
+  identity: TikTokIdentity;
+}) {
   useEffect(() => {
     const metaStorageKey = `copiwrite-meta-purchase:${reference}`;
     const tiktokStorageKey = `copiwrite-tiktok-purchase:${reference}`;
@@ -27,7 +37,8 @@ export function PurchaseEvent({ reference }: { reference: string }) {
       attempts += 1;
       if (!metaTracked) metaTracked = trackMetaPixelEvent("Purchase", `purchase_${reference}`);
       if (!tiktokTracked) {
-        tiktokTracked = trackTikTokPixelEvent("CompletePayment", `purchase_${reference}`);
+        identifyTikTokUser(identity);
+        tiktokTracked = trackTikTokPixelEvent("Purchase", `purchase_${reference}`);
       }
 
       if (metaTracked || tiktokTracked) {
@@ -52,7 +63,7 @@ export function PurchaseEvent({ reference }: { reference: string }) {
     return () => {
       if (retryTimer) clearTimeout(retryTimer);
     };
-  }, [reference]);
+  }, [identity, reference]);
 
   return null;
 }

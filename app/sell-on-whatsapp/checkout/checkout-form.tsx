@@ -3,7 +3,7 @@
 import { ArrowRight, LoaderCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { trackMetaPixelEvent } from "@/lib/meta-pixel";
-import { trackTikTokPixelEvent } from "@/lib/tiktok-pixel";
+import { identifyTikTokUserFromPii, trackTikTokPixelEvent } from "@/lib/tiktok-pixel";
 import styles from "./page.module.css";
 
 type FieldErrors = Partial<Record<"name" | "email" | "phone", string>>;
@@ -51,6 +51,7 @@ export function CheckoutForm() {
         throw new Error(result.message || "Payment could not be started.");
       }
       const checkoutEventId = `initiate_checkout_${result.reference || Date.now()}`;
+      await identifyTikTokUserFromPii(String(data.email || ""), String(data.phone || ""));
       trackMetaPixelEvent(
         "InitiateCheckout",
         checkoutEventId,

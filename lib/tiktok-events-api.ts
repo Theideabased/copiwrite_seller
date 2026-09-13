@@ -22,6 +22,17 @@ const normalizePhone = (value: string) => {
   return `+${digits}`;
 };
 
+export function tiktokIdentityForVerification(verification: PaystackVerification) {
+  const metadata = metadataRecord(verification.data?.metadata);
+  const email = verification.data?.customer?.email?.trim().toLowerCase() || "";
+  const phone = normalizePhone(String(metadata.whatsapp_number || ""));
+
+  return {
+    ...(email ? { email: sha256(email), external_id: sha256(email) } : {}),
+    ...(phone ? { phone_number: sha256(phone) } : {}),
+  };
+}
+
 export async function sendTikTokPurchaseEvent(
   verification: PaystackVerification,
   context: TikTokRequestContext,
@@ -52,7 +63,7 @@ export async function sendTikTokPurchaseEvent(
     event_source_id: TIKTOK_PIXEL_ID,
     data: [
       {
-        event: "CompletePayment",
+        event: "Purchase",
         event_time: Math.floor(Date.now() / 1000),
         event_id: `purchase_${reference}`,
         user,
