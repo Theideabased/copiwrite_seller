@@ -25,7 +25,7 @@ declare global {
 }
 
 export const whatsappPixelEventData: MetaPixelEventData = {
-  value: 10_000,
+  value: 5_000,
   currency: "NGN",
   content_name: "WhatsApp Views-to-Sales",
   content_ids: ["whatsapp-views-to-sales"],

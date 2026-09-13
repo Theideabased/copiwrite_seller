@@ -441,7 +441,7 @@ export function SlidesDeck() {
       <div className={styles.priceSlide}>
         <CircleDollarSign size={58} strokeWidth={1.4} aria-hidden="true" />
         <s>Up to ₦125,000 in total value</s>
-        <h2>₦10,000</h2>
+        <h2>₦5,000</h2>
         <p>One-time payment.</p>
         <span>First 20 buyers receive every item in the value stack.</span>
       </div>

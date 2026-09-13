@@ -3,7 +3,8 @@ import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 export const WHATSAPP_PRODUCT = {
   id: "whatsapp-views-to-sales",
   name: "WhatsApp Views-to-Sales",
-  amountKobo: 1_000_000,
+  amountKobo: 500_000,
+  previousAmountsKobo: [1_000_000],
   currency: "NGN",
 } as const;
 
@@ -184,9 +185,13 @@ export function metadataRecord(metadata: unknown): Record<string, unknown> {
 
 export function isCompletedProductPayment(verification: PaystackVerification) {
   const metadata = metadataRecord(verification.data?.metadata);
+  const acceptedAmounts: readonly number[] = [
+    WHATSAPP_PRODUCT.amountKobo,
+    ...WHATSAPP_PRODUCT.previousAmountsKobo,
+  ];
   return (
     verification.data?.status === "success" &&
-    verification.data.amount === WHATSAPP_PRODUCT.amountKobo &&
+    acceptedAmounts.includes(verification.data.amount ?? 0) &&
     verification.data.currency === WHATSAPP_PRODUCT.currency &&
     metadata.product_id === WHATSAPP_PRODUCT.id
   );

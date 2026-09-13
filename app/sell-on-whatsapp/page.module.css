@@ -61,23 +61,31 @@
   min-height: 2.75rem;
   display: inline-flex;
   align-items: center;
-  color: var(--letter-accent-dark);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.35rem;
+  background: var(--letter-accent);
+  color: white;
   font-size: 0.82rem;
   font-weight: 800;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
+  text-decoration: none;
 }
 
 .hero {
-  width: min(100% - 2rem, 62rem);
+  width: min(100% - 2rem, 68rem);
   margin-inline: auto;
-  padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(4rem, 8vw, 6rem);
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .heroCopy {
   max-width: 55rem;
-  margin-inline: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .eyebrow,
@@ -93,7 +101,7 @@
 .hero h1 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.6rem, 6.4vw, 5.25rem);
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
@@ -101,20 +109,117 @@
 
 .hero h1 span {
   display: block;
-  margin-top: 0.3em;
+  margin-top: 0.12em;
   color: var(--letter-accent-dark);
 }
 
 .heroLead {
+  max-width: 40rem;
   margin: 1.5rem 0 0;
-  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  color: var(--letter-muted);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.heroOffer {
+  display: grid;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--letter-line);
+  border-top: 0.35rem solid var(--letter-accent);
+  background: var(--letter-paper);
+}
+
+.heroOffer > p {
+  margin: 0;
+  color: var(--letter-muted);
+  font-size: 0.7rem;
   font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.heroOffer > strong {
+  margin-top: 0.6rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.heroOffer > span {
+  margin-top: 0.4rem;
+  color: var(--letter-muted);
+  font-size: 0.8rem;
+}
+
+.heroOffer ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.4rem 0;
+  padding: 1.25rem 0;
+  border-block: 1px solid var(--letter-line);
+  list-style: none;
+}
+
+.heroOffer li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.heroOffer li svg {
+  flex: 0 0 auto;
+  color: var(--letter-accent-dark);
+}
+
+.heroOffer > a {
+  min-height: 3.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.35rem;
+  background: var(--letter-accent);
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.heroOffer > small {
+  margin-top: 0.9rem;
+  color: var(--letter-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.heroOffer > small .auditSlotCount {
+  color: var(--letter-urgent);
+}
+
+.heroOffer > small a {
+  color: inherit;
+}
+
+.watchLabel {
+  margin: clamp(2.5rem, 6vw, 4.5rem) 0 0;
+  color: var(--letter-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
 }
 
 .videoWrap {
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  margin-top: clamp(2rem, 5vw, 3rem);
+  margin-top: 1.25rem;
   border: 1px solid var(--letter-line);
   border-radius: 0.5rem;
   background: oklch(0.16 0.01 150);
@@ -1341,6 +1446,280 @@
   display: none;
 }
 
+/* The concise sales page keeps each reading block short and the offer visible. */
+.concisePage :where(section, #price) {
+  scroll-margin-top: 1.5rem;
+}
+
+.heroPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.heroPrice strong {
+  font-size: 2.25rem;
+  letter-spacing: -0.04em;
+}
+
+.heroPrice span,
+.heroMeta {
+  color: var(--letter-muted);
+  font-size: 0.85rem;
+}
+
+.heroBuyButton {
+  margin-inline: 0;
+}
+
+.heroMeta {
+  margin: 0.75rem 0 0;
+  line-height: 1.5;
+}
+
+.heroProduct {
+  overflow: hidden;
+  border: 1px solid var(--letter-line);
+  border-radius: 0.5rem;
+  background: var(--letter-paper);
+}
+
+.heroProduct .launchTeaser {
+  margin: 0;
+  padding: 1rem;
+  color: var(--letter-accent-dark);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.concisePage :is(.letterSection, .proofSection, .offerSection, .faqSection, .finalSection) {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.concisePage .letter h2,
+.concisePage .offerIntro h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.concisePage .letter > p:not(.chapter, .finalBonus) {
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.quickLesson {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-left: 3px solid var(--letter-accent);
+  background: var(--letter-soft);
+  line-height: 1.6;
+}
+
+.quickLesson p {
+  margin: 0.5rem 0 0;
+}
+
+.concisePage .founderAuthoritySection {
+  padding-block: 2.5rem;
+}
+
+.concisePage .founderAuthority h2 {
+  font-size: 1.75rem;
+}
+
+.concisePage .founderLogo {
+  width: 5rem;
+}
+
+.concisePage .founderMessage,
+.concisePage .founderName {
+  margin-top: 0.75rem;
+}
+
+.concisePage .proofList {
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.concisePage .proofBlock {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+.concisePage .proofBlock blockquote {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.concisePage .proofFooter {
+  grid-template-columns: auto 1fr;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.concisePage .proofAvatar {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.concisePage .offerCard {
+  box-shadow: none;
+}
+
+.concisePage .offerIntro {
+  padding-bottom: 0;
+  text-align: left;
+}
+
+.guideLessons {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 clamp(1.5rem, 5vw, 3rem) 2rem;
+  list-style: none;
+}
+
+.guideLessons li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.6;
+}
+
+.guideLessons svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  color: var(--letter-accent-dark);
+}
+
+.guideBundle {
+  padding: 1.5rem clamp(1.5rem, 5vw, 3rem);
+  background: var(--letter-soft);
+}
+
+.guideBundle h3 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.guideBundle ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guideBundle li {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--letter-line);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guideBundle li span {
+  color: var(--letter-muted);
+  font-size: 0.8rem;
+}
+
+.guideBundle > p {
+  margin: 1rem 0 0;
+  color: var(--letter-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.concisePage .bonusStack h3 {
+  font-size: 1.5rem;
+}
+
+.concisePage .bonusAvailability {
+  margin: 0.75rem 0 0;
+}
+
+.concisePage .bonusLead {
+  margin: 0.75rem 0 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.concisePage .price > div > strong {
+  font-size: 3rem;
+}
+
+.concisePage .faqList summary {
+  min-height: 3.25rem;
+}
+
+.concisePage .faqList details[open] summary > span {
+  transform: rotate(45deg);
+}
+
+.concisePage .finalSection {
+  text-align: center;
+}
+
+.concisePage .finalSection .finalBonus {
+  margin: 1rem 0;
+  color: var(--letter-accent-dark);
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.questionLink {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--letter-accent-dark);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+@media (max-width: 860px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCopy {
+    max-width: 44rem;
+    text-align: center;
+  }
+
+  .heroLead {
+    margin-inline: auto;
+  }
+
+  .concisePage .hero {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .heroPrice {
+    justify-content: center;
+  }
+
+  .heroProduct {
+    width: min(100%, 32rem);
+    margin-inline: auto;
+  }
+
+  .heroOffer {
+    width: min(100%, 30rem);
+    margin-inline: auto;
+  }
+}
+
 @media (hover: hover) {
   .buyButton:hover {
     transform: translateY(-2px);
@@ -1360,15 +1739,22 @@
   }
 
   .headerLink {
-    display: none;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.72rem;
   }
 
   .hero {
-    padding-top: 3.5rem;
+    padding-top: 2.75rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 11.5vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .concisePage .proofList {
+    grid-template-columns: 1fr;
+    width: calc(100% - 1.5rem);
   }
 
   .videoWrap {

@@ -20,7 +20,7 @@ export default function WhatsAppCheckoutPage() {
       <div className={styles.checkoutGrid}>
         <section className={styles.summary} aria-labelledby="order-heading">
           <h1 id="order-heading">Complete your order.</h1>
-          <p className={styles.total}><strong>₦10,000</strong><span>One-time payment</span></p>
+          <p className={styles.total}><strong>₦5,000</strong><span>One-time payment</span></p>
         </section>
 
         <section className={styles.formCard} aria-labelledby="buyer-heading">

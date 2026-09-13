@@ -239,43 +239,16 @@ export function SalesVideo({ videoUrl, checkoutUrl, price }: SalesVideoProps) {
 type MobileCtaProps = {
   checkoutUrl: string;
   price: string;
-  hasConfiguredPrice: boolean;
 };
 
 export function MobileCta({
   checkoutUrl,
   price,
-  hasConfiguredPrice,
 }: MobileCtaProps) {
-  const [priceReached, setPriceReached] = useState(false);
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  useEffect(() => {
-    const priceSection = document.getElementById("price");
-    if (!priceSection) return;
-
-    observerRef.current = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setPriceReached(true);
-      },
-      { threshold: 0.15 },
-    );
-    observerRef.current.observe(priceSection);
-
-    return () => observerRef.current?.disconnect();
-  }, []);
-
-  const href = priceReached ? checkoutUrl : "#offer";
-  const label = priceReached
-    ? hasConfiguredPrice
-      ? `Get access: ${price}`
-      : "Ask about access"
-    : "See the step-by-step system";
-
   return (
     <div className={styles.mobileCta}>
-      <a href={href}>
-        {label} <ArrowRight size={17} aria-hidden="true" />
+      <a href={checkoutUrl}>
+        Buy Now — {price} <ArrowRight size={17} aria-hidden="true" />
       </a>
     </div>
   );

@@ -311,7 +311,7 @@ I am not asking you to pay ₦125,000.
 
 I am not even asking you to pay the ₦95,000 value of the core system.
 
-You can get the complete **WhatsApp Views-to-Sales** system today for a one-time payment of just **₦10,000**.
+You can get the complete **WhatsApp Views-to-Sales** system today for a one-time payment of just **₦5,000**.
 
 You receive the complete system, the diagnostic, the implementation checklist and direct personal access to Copiwrite.
 
@@ -323,6 +323,6 @@ Or your next Status can be the first step in a sales process you finally underst
 
 Click the button that says **“Start Implementing Now.”**
 
-Get WhatsApp Views-to-Sales for ₦10,000 and begin with the diagnostic.
+Get WhatsApp Views-to-Sales for ₦5,000 and begin with the diagnostic.
 
 **P.S.** The core system will still help you after the first 20 places are gone. But the personal multi-platform audit requires our time, so that bonus ends after the first 20 verified buyers. If you want us to examine your business and show you what to fix first, buy now while a place is still available.

@@ -129,10 +129,15 @@ async function notifyTelegram(verification: PaystackVerification, accessUrl: str
 
   const { reference, name, phone, email } = buyerDetails(verification);
   if (telegramReferences.has(reference)) return true;
+  const amount = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    maximumFractionDigits: 0,
+  }).format((verification.data?.amount ?? 0) / 100);
   const message = [
     "<b>New WhatsApp Views-to-Sales purchase</b>",
     "",
-    "<b>Amount:</b> ₦10,000",
+    `<b>Amount:</b> ${escapeHtml(amount)}`,
     `<b>Name:</b> ${escapeHtml(name)}`,
     `<b>Email:</b> ${escapeHtml(email || "Not provided")}`,
     `<b>WhatsApp:</b> ${escapeHtml(phone || "Not provided")}`,

@@ -16,7 +16,7 @@ function displayNaira(value: string) {
     : value;
 }
 
-const rawPrice = "10000";
+const rawPrice = "5000";
 const rawOriginalValue = clean(
   process.env.NEXT_PUBLIC_WHATSAPP_PRODUCT_ORIGINAL_VALUE,
 );
