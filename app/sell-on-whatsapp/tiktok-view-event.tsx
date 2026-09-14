@@ -8,6 +8,15 @@ const RETRY_DELAY_MS = 250;
 
 export function TikTokViewContentEvent() {
   useEffect(() => {
+    const tiktokClickId = new URLSearchParams(window.location.search).get("ttclid");
+    if (tiktokClickId) {
+      try {
+        window.sessionStorage.setItem("copiwrite-tiktok-ttclid", tiktokClickId);
+      } catch {
+        // ViewContent tracking still works when browser storage is blocked.
+      }
+    }
+
     let attempts = 0;
     let retryTimer: ReturnType<typeof setTimeout> | undefined;
     const eventId = `view_content_${Date.now()}`;
@@ -26,4 +35,3 @@ export function TikTokViewContentEvent() {
 
   return null;
 }
-

@@ -103,13 +103,18 @@ export async function sendTikTokPurchaseEvent(
       signal: AbortSignal.timeout(5_000),
     });
     const result = (await response.json().catch(() => null)) as
-      | { code?: number; message?: string }
+      | { code?: number; message?: string; request_id?: string }
       | null;
 
     if (!response.ok || result?.code !== 0) {
       console.error("TikTok Events API failed:", result?.message || response.statusText);
       return false;
     }
+    console.info("TikTok Purchase event sent.", {
+      eventId: `purchase_${reference}`,
+      requestId: result?.request_id || "not-returned",
+      testMode: Boolean(testEventCode),
+    });
     return true;
   } catch (error) {
     console.error("TikTok Events API network failure:", error instanceof Error ? error.message : error);

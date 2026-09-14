@@ -17,7 +17,14 @@ export function CheckoutForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
-    const tiktokClickId = new URLSearchParams(window.location.search).get("ttclid") || "";
+    let savedTikTokClickId = "";
+    try {
+      savedTikTokClickId = window.sessionStorage.getItem("copiwrite-tiktok-ttclid") || "";
+    } catch {
+      // The checkout can continue when browser storage is blocked.
+    }
+    const tiktokClickId =
+      new URLSearchParams(window.location.search).get("ttclid") || savedTikTokClickId;
     const tiktokCookie = document.cookie.match(/(?:^|;\s*)_ttp=([^;]+)/)?.[1] || "";
     const checkoutData = { ...data, tiktokClickId, tiktokCookie };
     const nextErrors: FieldErrors = {};
