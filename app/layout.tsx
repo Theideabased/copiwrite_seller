@@ -7,29 +7,29 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://copiwrite.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Copiwrite: Marketing that makes the value clear",
+    default: "AI Sales Automation for Growing Businesses | Copiwrite",
     template: "%s | Copiwrite",
   },
   description:
-    "Copiwrite turns complex offers into clear positioning, conversion copy, campaigns, and sales content that moves buyers to act.",
+    "Copiwrite builds AI sales automation systems that respond to leads, qualify prospects, automate follow-up and help businesses book more customer conversations.",
   keywords: [
-    "conversion copywriting",
-    "marketing strategy",
-    "sales enablement",
-    "website copywriting",
-    "B2B positioning",
+    "AI sales automation",
+    "lead qualification",
+    "automated lead follow-up",
+    "appointment booking automation",
+    "missed lead recovery",
   ],
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "Copiwrite",
-    title: "Turn what you sell into words people act on.",
-    description: "Strategy, copy, campaigns, and sales content for ambitious teams.",
+    title: "AI Sales Automation for Growing Businesses | Copiwrite",
+    description: "Respond to leads, qualify prospects, follow up, and book more customer conversations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Copiwrite: Marketing that makes the value clear",
-    description: "Strategy, copy, campaigns, and sales content for ambitious teams.",
+    title: "AI Sales Automation for Growing Businesses | Copiwrite",
+    description: "Respond to leads, qualify prospects, follow up, and book more customer conversations.",
   },
 };
 

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { validateDemo } from "@/lib/demo-request";
 
 export const runtime = "nodejs";
 
@@ -11,7 +12,9 @@ type ContactPayload = {
   email?: unknown;
   company?: unknown;
   service?: unknown;
-  budget?: unknown;
+  businessWebsite?: unknown;
+  industry?: unknown;
+  leadSource?: unknown;
   message?: unknown;
   website?: unknown;
 };
@@ -43,6 +46,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "The request could not be read. Please try again." }, { status: 400 });
   }
 
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return NextResponse.json({ message: "Please send a valid demo request." }, { status: 400 });
+  }
+
+  // Keep the old honeypot separate from the visible businessWebsite field.
   if (clean(payload.website, 100)) {
     return NextResponse.json({ ok: true });
   }
@@ -52,12 +60,15 @@ export async function POST(request: NextRequest) {
     email: clean(payload.email, 200).toLowerCase(),
     company: clean(payload.company, 150),
     service: clean(payload.service, 100),
-    budget: clean(payload.budget, 50) || "Not specified",
+    businessWebsite: clean(payload.businessWebsite, 300),
+    industry: clean(payload.industry, 100),
+    leadSource: clean(payload.leadSource, 100),
     message: clean(payload.message, 2000),
   };
 
-  if (lead.name.length < 2 || !/^\S+@\S+\.\S+$/.test(lead.email) || !lead.service || lead.message.length < 20) {
-    return NextResponse.json({ message: "Please complete the required fields and try again." }, { status: 422 });
+  const errors = validateDemo(lead);
+  if (Object.keys(errors).length) {
+    return NextResponse.json({ message: "Please check the highlighted fields and try again.", errors }, { status: 422 });
   }
 
   // The VITE_* fallbacks keep the user's existing local .env working. Hosted
@@ -73,28 +84,37 @@ export async function POST(request: NextRequest) {
   }
 
   const message = [
-    "<b>New Copiwrite enquiry</b>",
+    "<b>New Copiwrite automation demo request</b>",
     "",
     `<b>Name:</b> ${escapeTelegramHtml(lead.name)}`,
     `<b>Email:</b> ${escapeTelegramHtml(lead.email)}`,
     `<b>Company:</b> ${escapeTelegramHtml(lead.company || "Not specified")}`,
-    `<b>Service:</b> ${escapeTelegramHtml(lead.service)}`,
-    `<b>Budget:</b> ${escapeTelegramHtml(lead.budget)}`,
+    `<b>Website:</b> ${escapeTelegramHtml(lead.businessWebsite || "Not provided")}`,
+    `<b>Industry:</b> ${escapeTelegramHtml(lead.industry)}`,
+    `<b>Lead source:</b> ${escapeTelegramHtml(lead.leadSource)}`,
+    `<b>Automation needed:</b> ${escapeTelegramHtml(lead.service)}`,
     "",
-    "<b>Project details</b>",
+    "<b>Current sales process</b>",
     escapeTelegramHtml(lead.message),
   ].join("\n");
 
-  const telegramResponse = await fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: telegramChatId,
-      text: message,
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-    }),
-  });
+  let telegramResponse: Response;
+  try {
+    telegramResponse = await fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: AbortSignal.timeout(15000),
+      body: JSON.stringify({
+        chat_id: telegramChatId,
+        text: message,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      }),
+    });
+  } catch {
+    console.error("Telegram demo request delivery failed: network error or timeout.");
+    return NextResponse.json({ message: "We could not deliver your request. Please try again or email info@copiwrite.com." }, { status: 502 });
+  }
 
   if (!telegramResponse.ok) {
     const telegramError = (await telegramResponse.json().catch(() => null)) as { description?: string } | null;
